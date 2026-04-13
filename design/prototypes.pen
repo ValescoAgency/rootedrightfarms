@@ -1,0 +1,3812 @@
+{
+  "version": "2.10",
+  "children": [
+    {
+      "type": "frame",
+      "id": "jO3cu",
+      "x": 0,
+      "y": 0,
+      "name": "Prototype A — Artisan Editorial",
+      "width": 375,
+      "fill": "#F5F3EEFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "aMvOq",
+          "name": "navA",
+          "width": "fill_container",
+          "fill": "#2D5E3AFF",
+          "padding": [
+            16,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "zhA71",
+              "width": 36,
+              "height": 36,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "icon_font",
+              "id": "KQT7a",
+              "name": "menuA",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "menu",
+              "iconFontFamily": "lucide",
+              "fill": "#FFFFFFFF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "mpeM9",
+          "name": "heroA",
+          "clip": true,
+          "width": "fill_container",
+          "height": 520,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "./images/generated-1776083508112.png",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "HFV9k",
+              "x": 0,
+              "y": 0,
+              "name": "heroOvA",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 0,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#1B3A2800",
+                    "position": 0.2
+                  },
+                  {
+                    "color": "#1B3A28DD",
+                    "position": 1
+                  }
+                ]
+              },
+              "width": 375,
+              "height": 520
+            },
+            {
+              "type": "frame",
+              "id": "iDhQC",
+              "x": 0,
+              "y": 0,
+              "name": "heroCtA",
+              "width": 375,
+              "height": 520,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                0,
+                24,
+                48,
+                24
+              ],
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GZ6I5",
+                  "name": "eyeA",
+                  "fill": "#D6DDD0FF",
+                  "content": "ARDMORE, OKLAHOMA",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "UoRRP",
+                  "name": "hdA",
+                  "fill": "#FFFFFFFF",
+                  "content": "Rooted in\nScience.\nGrown with\nPurpose.",
+                  "lineHeight": 1.1,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 40
+                },
+                {
+                  "type": "text",
+                  "id": "CAtQv",
+                  "name": "subA",
+                  "fill": "#D6DDD0FF",
+                  "textGrowth": "fixed-width",
+                  "width": 300,
+                  "content": "Premium cannabis cultivated through precision botany and a passion for healing.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 15
+                },
+                {
+                  "type": "frame",
+                  "id": "q69ol",
+                  "name": "ctaA",
+                  "fill": "#2D5E3AFF",
+                  "cornerRadius": 4,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "azLlA",
+                      "name": "ctaTxA",
+                      "fill": "#FFFFFFFF",
+                      "content": "Explore Our Strains",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dLe9K",
+          "name": "divA",
+          "width": "fill_container",
+          "padding": [
+            32,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "y0bHm",
+              "name": "ornA",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "leaf",
+              "iconFontFamily": "lucide",
+              "fill": "#2D5E3AFF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9nxsi",
+          "name": "abtA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            0,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "HAcly",
+              "name": "abtLblA",
+              "fill": "#4A6B52FF",
+              "content": "ABOUT",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "R31gO",
+              "name": "abtHdA",
+              "fill": "#1B3A28FF",
+              "textGrowth": "fixed-width",
+              "width": 327,
+              "content": "We channel our passion\nfor science, health,\nand healing.",
+              "lineHeight": 1.25,
+              "fontFamily": "Playfair Display",
+              "fontSize": 28
+            },
+            {
+              "type": "text",
+              "id": "uTEV8",
+              "name": "abtBdA",
+              "fill": "#4A6B52FF",
+              "textGrowth": "fixed-width",
+              "width": 327,
+              "content": "Our mission is to bring precision growing techniques to the medical marijuana industry in Oklahoma, forming close relationships with dispensaries to supply top quality, affordable products.",
+              "lineHeight": 1.6,
+              "fontFamily": "Inter",
+              "fontSize": 14
+            },
+            {
+              "type": "frame",
+              "id": "6DYU5",
+              "name": "abtCtaA",
+              "cornerRadius": 4,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1.5,
+                "fill": "#2D5E3AFF"
+              },
+              "padding": [
+                12,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "OrrX4",
+                  "name": "abtCtaTxA",
+                  "fill": "#2D5E3AFF",
+                  "content": "Learn More About Us",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xgmig",
+          "name": "strA",
+          "width": "fill_container",
+          "fill": "#1B3A28FF",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "nM5OW",
+              "name": "strLblA",
+              "fill": "#D6DDD0FF",
+              "content": "OUR STRAINS",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "pTbUV",
+              "name": "strHdA",
+              "fill": "#FFFFFFFF",
+              "content": "Curated Cultivars",
+              "fontFamily": "Playfair Display",
+              "fontSize": 32
+            },
+            {
+              "type": "frame",
+              "id": "bfamY",
+              "name": "c1A",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "#F5F3EEFF",
+              "cornerRadius": 4,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BLLit",
+                  "name": "c1iA",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1776083548307.png",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "uKXOT",
+                  "name": "c1bA",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    16,
+                    16,
+                    20,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fXkSn",
+                      "name": "c1nA",
+                      "fill": "#1B3A28FF",
+                      "content": "Banana Candy",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "q4X8F",
+                      "name": "c1tA",
+                      "fill": "#2D5E3AFF",
+                      "content": "HYBRID",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "PzJhh",
+                      "name": "c1dA",
+                      "fill": "#4A6B52FF",
+                      "textGrowth": "fixed-width",
+                      "width": 295,
+                      "content": "Sweet tropical flavors with a smooth, relaxing finish.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 13
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HLYJ9",
+              "name": "c2A",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "#F5F3EEFF",
+              "cornerRadius": 4,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "oHmmn",
+                  "name": "c2iA",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1776083695453.png",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "BccP1",
+                  "name": "c2bA",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    16,
+                    16,
+                    20,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "VxdTX",
+                      "name": "c2nA",
+                      "fill": "#1B3A28FF",
+                      "content": "Pie Hoe",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Dzjwq",
+                      "name": "c2tA",
+                      "fill": "#2D5E3AFF",
+                      "content": "INDICA DOMINANT HYBRID · 60/40",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "r4cnr",
+                      "name": "c2dA",
+                      "fill": "#4A6B52FF",
+                      "textGrowth": "fixed-width",
+                      "width": 295,
+                      "content": "Herbal berry flavors with heavy nutty diesel. Crossing Grape Pie × Tahoe OG for deep relaxation.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 13
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HlWsB",
+              "name": "c2A",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "#F5F3EEFF",
+              "cornerRadius": 4,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "x9oik",
+                  "name": "c2iA",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "jackh1337",
+                    "link": "https://unsplash.com/@jackh1337",
+                    "author": "Jack H"
+                  },
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1776083724867.png",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "3OMp7",
+                  "name": "c2bA",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    16,
+                    16,
+                    20,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WJTOH",
+                      "name": "c2nA",
+                      "fill": "#1B3A28FF",
+                      "content": "Pie Hoe",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wYI7s",
+                      "name": "c2tA",
+                      "fill": "#2D5E3AFF",
+                      "content": "INDICA DOMINANT HYBRID · 60/40",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "4OVqc",
+                      "name": "c2dA",
+                      "fill": "#4A6B52FF",
+                      "textGrowth": "fixed-width",
+                      "width": 295,
+                      "content": "Herbal berry flavors with heavy nutty diesel. Crossing Grape Pie × Tahoe OG for deep relaxation.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 13
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1DyHN",
+              "name": "vaA",
+              "width": "fill_container",
+              "padding": [
+                14,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VGw3q",
+                  "name": "vaTxA",
+                  "fill": "#FFFFFFFF",
+                  "content": "View All Strains →",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nE5S3",
+              "name": "vaA",
+              "width": "fill_container",
+              "padding": [
+                14,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eB8vT",
+                  "name": "vaTxA",
+                  "fill": "#FFFFFFFF",
+                  "content": "View All Strains →",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tzauW",
+          "name": "wsA",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            48,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "E62t1",
+              "name": "wsLblA",
+              "fill": "#4A6B52FF",
+              "content": "DISPENSARY PARTNERS",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "600",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "q05x5",
+              "name": "wsHdA",
+              "fill": "#1B3A28FF",
+              "content": "Partner With Us",
+              "textAlign": "center",
+              "fontFamily": "Playfair Display",
+              "fontSize": 32
+            },
+            {
+              "type": "text",
+              "id": "LI7iq",
+              "name": "wsBdA",
+              "fill": "#4A6B52FF",
+              "textGrowth": "fixed-width",
+              "width": 300,
+              "content": "Interested in carrying Rooted Right Farms products at your dispensary? Let's talk.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14
+            },
+            {
+              "type": "frame",
+              "id": "5F090",
+              "name": "wsCtA",
+              "fill": "#2D5E3AFF",
+              "cornerRadius": 4,
+              "padding": [
+                14,
+                32
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1OJ5A",
+                  "name": "wsCtTxA",
+                  "fill": "#FFFFFFFF",
+                  "content": "Contact for Wholesale",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "06gXN",
+          "name": "ftA",
+          "width": "fill_container",
+          "fill": "#1B3A28FF",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "U2C6d",
+              "width": 48,
+              "height": 48,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "5i3Mk",
+              "name": "ftLinksA",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1TmT1",
+                  "name": "ftl1A",
+                  "fill": "#D6DDD0FF",
+                  "content": "Strains",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "uJlrr",
+                  "name": "ftl2A",
+                  "fill": "#D6DDD0FF",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "eOljv",
+                  "name": "ftl3A",
+                  "fill": "#D6DDD0FF",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MgxPd",
+              "name": "ftSocA",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "d1V5x",
+                  "name": "ftIgA",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#D6DDD0FF"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "ymZEw",
+                  "name": "ftFbA",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "facebook",
+                  "iconFontFamily": "lucide",
+                  "fill": "#D6DDD0FF"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "dr33V",
+              "name": "ftCpA",
+              "fill": "#4A6B52FF",
+              "content": "© 2026 Rooted Right Farms. All rights reserved.",
+              "fontFamily": "Inter",
+              "fontSize": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "lnS56",
+      "x": 450,
+      "y": 0,
+      "name": "Prototype B — Editorial Scientific",
+      "width": 375,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NskSG",
+          "name": "navB",
+          "width": "fill_container",
+          "padding": [
+            16,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "k3NsI",
+              "width": 40,
+              "height": 40,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "icon_font",
+              "id": "Zrhly",
+              "name": "menuB",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "menu",
+              "iconFontFamily": "lucide",
+              "fill": "#1E3322FF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UsHcN",
+          "name": "heroB",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            40,
+            24,
+            32,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "YB3Ur",
+              "name": "eyeB",
+              "fill": "#6B7B6BFF",
+              "content": "PRECISION CANNABIS · ARDMORE, OK",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "500",
+              "letterSpacing": 2.5
+            },
+            {
+              "type": "text",
+              "id": "8B80g",
+              "name": "hdB",
+              "fill": "#1E3322FF",
+              "textGrowth": "fixed-width",
+              "width": 327,
+              "content": "Science-Led\nCultivation for\nOklahoma",
+              "lineHeight": 1.08,
+              "fontFamily": "Playfair Display",
+              "fontSize": 42
+            },
+            {
+              "type": "text",
+              "id": "ZDoBn",
+              "name": "subB",
+              "fill": "#6B7B6BFF",
+              "textGrowth": "fixed-width",
+              "width": 327,
+              "content": "Premium cultivars rooted in botany, grown with\npurpose, and delivered with care.",
+              "lineHeight": 1.55,
+              "fontFamily": "Inter",
+              "fontSize": 15
+            },
+            {
+              "type": "frame",
+              "id": "dhQJ1",
+              "name": "ctaRB",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4SeXV",
+                  "name": "ctaPB",
+                  "fill": "#2D6B3FFF",
+                  "cornerRadius": 6,
+                  "padding": [
+                    14,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rFuko",
+                      "name": "ctaPTxB",
+                      "fill": "#FFFFFFFF",
+                      "content": "Our Strains",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T1iGG",
+                  "name": "ctaSB",
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1.5,
+                    "fill": "#1E3322FF"
+                  },
+                  "padding": [
+                    14,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Of7a4",
+                      "name": "ctaSTxB",
+                      "fill": "#1E3322FF",
+                      "content": "Contact Us",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jiJBO",
+          "name": "heroImgB",
+          "metadata": {
+            "type": "unsplash",
+            "username": "weedzard_cannabis",
+            "link": "https://unsplash.com/@weedzard_cannabis",
+            "author": "Weedzard Cannabis Light"
+          },
+          "clip": true,
+          "width": "fill_container",
+          "height": 280,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1745422317680-79250263302f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM3NDF8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "AlVFg",
+              "x": 20,
+              "y": 240,
+              "name": "figB",
+              "fill": "#FFFFFFCC",
+              "cornerRadius": 4,
+              "padding": [
+                6,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8yiNQ",
+                  "name": "figTxB",
+                  "fill": "#1E3322FF",
+                  "content": "FIG. 001 — CULTIVATION FACILITY",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gHLOF",
+          "name": "statsB",
+          "width": "fill_container",
+          "fill": "#1E3322FF",
+          "padding": [
+            20,
+            24
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lrC1i",
+              "name": "s1B",
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nbJlT",
+                  "name": "s1nB",
+                  "fill": "#FFFFFFFF",
+                  "content": "4+",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "BBhWn",
+                  "name": "s1lB",
+                  "fill": "#808A80FF",
+                  "content": "STRAINS",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mnNP7",
+              "name": "s2B",
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tYFOw",
+                  "name": "s2nB",
+                  "fill": "#FFFFFFFF",
+                  "content": "100%",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "GCy6t",
+                  "name": "s2lB",
+                  "fill": "#808A80FF",
+                  "content": "OKLAHOMA",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lQJF7",
+              "name": "s3B",
+              "layout": "vertical",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IA64i",
+                  "name": "s3nB",
+                  "fill": "#FFFFFFFF",
+                  "content": "B2B",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "P8gFo",
+                  "name": "s3lB",
+                  "fill": "#808A80FF",
+                  "content": "WHOLESALE",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tPejc",
+          "name": "abtB",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "Nyeau",
+              "name": "abtLblB",
+              "fill": "#808A80FF",
+              "content": "FIG. 002 — ABOUT",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "500",
+              "letterSpacing": 2.5
+            },
+            {
+              "type": "text",
+              "id": "rKUhy",
+              "name": "abtHdB",
+              "fill": "#1E3322FF",
+              "textGrowth": "fixed-width",
+              "width": 327,
+              "content": "Passion for Science,\nHealth & Healing",
+              "lineHeight": 1.2,
+              "fontFamily": "Playfair Display",
+              "fontSize": 28
+            },
+            {
+              "type": "text",
+              "id": "cpNU3",
+              "name": "abtBdB",
+              "fill": "#6B7B6BFF",
+              "textGrowth": "fixed-width",
+              "width": 327,
+              "content": "Our mission is to bring precision growing techniques to the medical marijuana industry in Oklahoma, and to form close relationships with dispensaries to supply top quality, affordable products.",
+              "lineHeight": 1.6,
+              "fontFamily": "Inter",
+              "fontSize": 14
+            },
+            {
+              "type": "rectangle",
+              "id": "ACRZp",
+              "name": "abtLnB",
+              "fill": "#2D6B3FFF",
+              "width": 40,
+              "height": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ake6a",
+          "name": "strB",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "4ccDH",
+              "name": "strLblB",
+              "fill": "#808A80FF",
+              "content": "FIG. 003 — CULTIVARS",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "500",
+              "letterSpacing": 2.5
+            },
+            {
+              "type": "text",
+              "id": "6VgKo",
+              "name": "strHdB",
+              "fill": "#1E3322FF",
+              "content": "Our Strains",
+              "fontFamily": "Playfair Display",
+              "fontSize": 32
+            },
+            {
+              "type": "frame",
+              "id": "fStzC",
+              "name": "c1B",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "#F8F9F7FF",
+              "cornerRadius": 6,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000008",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 16
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0gtHt",
+                  "name": "c1iB",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "crystalweed",
+                    "link": "https://unsplash.com/@crystalweed",
+                    "author": "CRYSTALWEED cannabis"
+                  },
+                  "clip": true,
+                  "width": 130,
+                  "height": 160,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1635598630466-dc7f23bf6e51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM3NTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "v6ZAo",
+                  "name": "c1fB",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": 16,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "a91oY",
+                      "name": "c1nB",
+                      "fill": "#1E3322FF",
+                      "content": "Banana Candy",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "oXdBJ",
+                      "name": "c1tB",
+                      "fill": "#2D6B3FFF",
+                      "content": "HYBRID",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "600",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "tpTBo",
+                      "name": "c1dB",
+                      "fill": "#6B7B6BFF",
+                      "textGrowth": "fixed-width",
+                      "width": 170,
+                      "content": "Sweet tropical flavors with a smooth, relaxing finish.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 12
+                    },
+                    {
+                      "type": "text",
+                      "id": "TGaEv",
+                      "name": "c1cB",
+                      "fill": "#2D6B3FFF",
+                      "content": "Details →",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "p8BIt",
+              "name": "c2B",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "#F8F9F7FF",
+              "cornerRadius": 6,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000008",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 16
+              },
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qVGpl",
+                  "name": "c2iB",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "iambobnelson",
+                    "link": "https://unsplash.com/@iambobnelson",
+                    "author": "Robert Nelson"
+                  },
+                  "clip": true,
+                  "width": 130,
+                  "height": 160,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1520224855316-280b2e6afca1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM3Njd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "qhRpq",
+                  "name": "c2fB",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": 16,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yV8Ks",
+                      "name": "c2nB",
+                      "fill": "#1E3322FF",
+                      "content": "Pie Hoe",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "JKCci",
+                      "name": "c2tB",
+                      "fill": "#2D6B3FFF",
+                      "content": "INDICA DOMINANT · 60/40",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "600",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "bZP4k",
+                      "name": "c2dB",
+                      "fill": "#6B7B6BFF",
+                      "textGrowth": "fixed-width",
+                      "width": 170,
+                      "content": "Herbal berry flavors with nutty diesel. Grape Pie × Tahoe OG.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 12
+                    },
+                    {
+                      "type": "text",
+                      "id": "VmXob",
+                      "name": "c2cB",
+                      "fill": "#2D6B3FFF",
+                      "content": "Details →",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "70bsZ",
+              "name": "vaBwrap",
+              "width": "fill_container",
+              "padding": [
+                14,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jlcWK",
+                  "name": "vaBbtn",
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1.5,
+                    "fill": "#1E3322FF"
+                  },
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3KBtq",
+                      "name": "vaBtx",
+                      "fill": "#1E3322FF",
+                      "content": "View All Strains",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "5AKLT",
+          "name": "wsB",
+          "metadata": {
+            "type": "unsplash",
+            "username": "crystalweed",
+            "link": "https://unsplash.com/@crystalweed",
+            "author": "CRYSTALWEED cannabis"
+          },
+          "clip": true,
+          "width": "fill_container",
+          "height": 300,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1679931241981-7b7d98475c97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM3ODJ8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "y5ZiR",
+              "x": 0,
+              "y": 0,
+              "name": "wsOvB",
+              "fill": "#1E3322DD",
+              "width": 375,
+              "height": 300
+            },
+            {
+              "type": "frame",
+              "id": "DOj8T",
+              "x": 0,
+              "y": 0,
+              "name": "wsCtB",
+              "width": 375,
+              "height": 300,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                0,
+                32
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "b8FbF",
+                  "name": "wsHdB",
+                  "fill": "#FFFFFFFF",
+                  "content": "Partner With Us",
+                  "textAlign": "center",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 30
+                },
+                {
+                  "type": "text",
+                  "id": "TwIK3",
+                  "name": "wsBdB",
+                  "fill": "#FFFFFFCC",
+                  "textGrowth": "fixed-width",
+                  "width": 280,
+                  "content": "Interested in carrying our products\nat your dispensary?",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "frame",
+                  "id": "feTFL",
+                  "name": "wsCtaB",
+                  "fill": "#2D6B3FFF",
+                  "cornerRadius": 6,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rI7za",
+                      "name": "wsCtaTxB",
+                      "fill": "#FFFFFFFF",
+                      "content": "Get in Touch",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "p5lE7",
+          "name": "ftB",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "m74Y4",
+              "width": 48,
+              "height": 48,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "Cfp3S",
+              "name": "ftLinksB",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QhVPk",
+                  "name": "ftl1B",
+                  "fill": "#6B7B6BFF",
+                  "content": "Strains",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "cR10j",
+                  "name": "ftl2B",
+                  "fill": "#6B7B6BFF",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "ObyVB",
+                  "name": "ftl3B",
+                  "fill": "#6B7B6BFF",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "at0ja",
+              "name": "ftSocB",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "VyclV",
+                  "name": "ftIgB",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7B6BFF"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "L7wyB",
+                  "name": "ftFbB",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "facebook",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7B6BFF"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "kmLc8",
+              "name": "ftDvB",
+              "fill": "#E0E5DCFF",
+              "width": 200,
+              "height": 1
+            },
+            {
+              "type": "text",
+              "id": "OK3A2",
+              "name": "ftCpB",
+              "fill": "#808A80FF",
+              "content": "© 2026 Rooted Right Farms",
+              "fontFamily": "Inter",
+              "fontSize": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "p2MVg",
+      "x": 0,
+      "y": 2600,
+      "name": "Desktop A — Artisan Editorial",
+      "width": 1440,
+      "fill": "#F5F3EEFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "l9rDQ",
+          "name": "dNavA",
+          "width": "fill_container",
+          "fill": "#2D5E3AFF",
+          "padding": [
+            18,
+            60
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "aj6uD",
+              "width": 44,
+              "height": 44,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "jNNSy",
+              "name": "dNlA",
+              "gap": 36,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "rzQYH",
+                  "name": "dn1A",
+                  "fill": "#D6DDD0FF",
+                  "content": "Strains",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "mfyp7",
+                  "name": "dn2A",
+                  "fill": "#D6DDD0FF",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "TRaiM",
+                  "name": "dn3A",
+                  "fill": "#D6DDD0FF",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "frame",
+                  "id": "lIb2B",
+                  "name": "dNcA",
+                  "cornerRadius": 4,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#FFFFFFAA"
+                  },
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "A5vZz",
+                      "name": "dNcTxA",
+                      "fill": "#FFFFFFFF",
+                      "content": "Wholesale Inquiry",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Mg17m",
+          "name": "dHeroA",
+          "metadata": {
+            "type": "unsplash",
+            "username": "declansun",
+            "link": "https://unsplash.com/@declansun",
+            "author": "Declan Sun"
+          },
+          "clip": true,
+          "width": "fill_container",
+          "height": 680,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1728881829350-8d98c73a0358?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4MDF8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "yWVv8",
+              "x": 0,
+              "y": 0,
+              "name": "dHOvA",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 0,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#1B3A2800",
+                    "position": 0.15
+                  },
+                  {
+                    "color": "#1B3A28CC",
+                    "position": 0.85
+                  }
+                ]
+              },
+              "width": 1440,
+              "height": 680
+            },
+            {
+              "type": "frame",
+              "id": "Wu3Nu",
+              "x": 0,
+              "y": 0,
+              "name": "dHCtA",
+              "width": 1440,
+              "height": 680,
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                0,
+                80,
+                80,
+                80
+              ],
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "idtiC",
+                  "name": "dHEyA",
+                  "fill": "#D6DDD0FF",
+                  "content": "ARDMORE, OKLAHOMA · PREMIUM CANNABIS CULTIVAR",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "FPJBj",
+                  "name": "dHHdA",
+                  "fill": "#FFFFFFFF",
+                  "content": "Rooted in Science.\nGrown with Purpose.",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 64
+                },
+                {
+                  "type": "text",
+                  "id": "YeQJQ",
+                  "name": "dHSubA",
+                  "fill": "#D6DDD0FF",
+                  "textGrowth": "fixed-width",
+                  "width": 520,
+                  "content": "Premium cannabis cultivated through precision botany and a passion for healing.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18
+                },
+                {
+                  "type": "frame",
+                  "id": "BKC2I",
+                  "name": "dHCrA",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "2zHzA",
+                      "name": "dHCpA",
+                      "fill": "#2D5E3AFF",
+                      "cornerRadius": 4,
+                      "padding": [
+                        16,
+                        32
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oYpO3",
+                          "name": "dHCpTxA",
+                          "fill": "#FFFFFFFF",
+                          "content": "Explore Our Strains",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FJrPK",
+                      "name": "dHCsA",
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1.5,
+                        "fill": "#FFFFFFAA"
+                      },
+                      "padding": [
+                        16,
+                        32
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Avhg8",
+                          "name": "dHCsTxA",
+                          "fill": "#FFFFFFFF",
+                          "content": "Contact for Wholesale",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "PD8J7",
+          "name": "dDvA",
+          "width": "fill_container",
+          "padding": [
+            40,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "1f4cp",
+              "name": "dOrA",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "leaf",
+              "iconFontFamily": "lucide",
+              "fill": "#2D5E3AFF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lDx7G",
+          "name": "dAbA",
+          "width": "fill_container",
+          "gap": 80,
+          "padding": [
+            0,
+            80,
+            60,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "VbfZC",
+              "name": "dAbLA",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8oWCu",
+                  "name": "dAbLbA",
+                  "fill": "#4A6B52FF",
+                  "content": "ABOUT",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "7hxVH",
+                  "name": "dAbHdA",
+                  "fill": "#1B3A28FF",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "We channel our passion\nfor science, health,\nand healing.",
+                  "lineHeight": 1.2,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 40
+                },
+                {
+                  "type": "text",
+                  "id": "jmtjh",
+                  "name": "dAbBdA",
+                  "fill": "#4A6B52FF",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Our mission is to bring precision growing techniques to the medical marijuana industry in Oklahoma, and to form close relationships with dispensaries to supply them with top quality, affordable products.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                },
+                {
+                  "type": "frame",
+                  "id": "umP0o",
+                  "name": "dAbCtA",
+                  "cornerRadius": 4,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1.5,
+                    "fill": "#2D5E3AFF"
+                  },
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "9z7wN",
+                      "name": "dAbCtTxA",
+                      "fill": "#2D5E3AFF",
+                      "content": "Learn More About Us",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4i8q0",
+              "name": "dAbImgA",
+              "metadata": {
+                "type": "unsplash",
+                "username": "shakib2777",
+                "link": "https://unsplash.com/@shakib2777",
+                "author": "Shakib Uzzaman"
+              },
+              "clip": true,
+              "width": 480,
+              "height": 400,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1673538064334-72dcb3cbf181?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4Mjd8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "scbUh",
+          "name": "dStA",
+          "width": "fill_container",
+          "fill": "#1B3A28FF",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            60,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "HpRYM",
+              "name": "dStHrA",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kNr2U",
+                  "name": "dStHlA",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tAozY",
+                      "name": "dStLbA",
+                      "fill": "#D6DDD0FF",
+                      "content": "OUR STRAINS",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "600",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "2uFLe",
+                      "name": "dStHdA",
+                      "fill": "#FFFFFFFF",
+                      "content": "Curated Cultivars",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 40
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "njBEJ",
+                  "name": "dStVaA",
+                  "fill": "#D6DDD0FF",
+                  "content": "View All Strains →",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BpZ02",
+              "name": "dCrA",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "r9d7F",
+                  "name": "dc1A",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F5F3EEFF",
+                  "cornerRadius": 4,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "LZgsr",
+                      "name": "dc1iA",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "crystalweed",
+                        "link": "https://unsplash.com/@crystalweed",
+                        "author": "CRYSTALWEED cannabis"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1605039828994-9ad00c0cc10c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4NTF8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e5tci",
+                      "name": "dc1bA",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YF0W6",
+                          "name": "dc1nA",
+                          "fill": "#1B3A28FF",
+                          "content": "Banana Candy",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "6ZKJE",
+                          "name": "dc1tA",
+                          "fill": "#2D5E3AFF",
+                          "content": "HYBRID",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "HwIJg",
+                          "name": "dc1dA",
+                          "fill": "#4A6B52FF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Sweet tropical flavors with a smooth, relaxing finish.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "7IvsW",
+                  "name": "dc2A",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F5F3EEFF",
+                  "cornerRadius": 4,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TzXQ2",
+                      "name": "dc2iA",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "2hmedia",
+                        "link": "https://unsplash.com/@2hmedia",
+                        "author": "2H Media"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1657818019102-ca9f27f1cbca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4Nzl8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Y9tBp",
+                      "name": "dc2bA",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PRVf1",
+                          "name": "dc2nA",
+                          "fill": "#1B3A28FF",
+                          "content": "Pine Bud",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vwWKa",
+                          "name": "dc2tA",
+                          "fill": "#2D5E3AFF",
+                          "content": "SATIVA",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "XYx1X",
+                          "name": "dc2dA",
+                          "fill": "#4A6B52FF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Piney, earthy aromatics with an energizing cerebral lift.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "1OcEW",
+                  "name": "dc3A",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F5F3EEFF",
+                  "cornerRadius": 4,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "6Yilf",
+                      "name": "dc3iA",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "virginiaphotostories",
+                        "link": "https://unsplash.com/@virginiaphotostories",
+                        "author": "Virginia Marinova"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1654700208890-10a6d6d2c7e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4ODB8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1XYXS",
+                      "name": "dc3bA",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ib5RY",
+                          "name": "dc3nA",
+                          "fill": "#1B3A28FF",
+                          "content": "TropicanaCookies",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "s86wG",
+                          "name": "dc3tA",
+                          "fill": "#2D5E3AFF",
+                          "content": "SATIVA DOMINANT",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "cdd1c",
+                          "name": "dc3dA",
+                          "fill": "#4A6B52FF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Citrus-forward with a creative, uplifting high.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gbMiW",
+                  "name": "dc4A",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F5F3EEFF",
+                  "cornerRadius": 4,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gp4ai",
+                      "name": "dc4iA",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "testeurdecbd",
+                        "link": "https://unsplash.com/@testeurdecbd",
+                        "author": "Testeur de CBD"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1638989863836-854b657391b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4ODB8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EklTx",
+                      "name": "dc4bA",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "orVxl",
+                          "name": "dc4nA",
+                          "fill": "#1B3A28FF",
+                          "content": "Pie Hoe",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZCWwz",
+                          "name": "dc4tA",
+                          "fill": "#2D5E3AFF",
+                          "content": "INDICA DOMINANT · 60/40",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "39fG5",
+                          "name": "dc4dA",
+                          "fill": "#4A6B52FF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Herbal berry with nutty diesel. Grape Pie × Tahoe OG.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "iB74o",
+          "name": "dWsA",
+          "width": "fill_container",
+          "gap": 80,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "eNmfa",
+              "name": "dWsLA",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0mVgv",
+                  "name": "dWsLbA",
+                  "fill": "#4A6B52FF",
+                  "content": "DISPENSARY PARTNERS",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "8w54K",
+                  "name": "dWsHdA",
+                  "fill": "#1B3A28FF",
+                  "content": "Partner With Us",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 44
+                },
+                {
+                  "type": "text",
+                  "id": "CAlgU",
+                  "name": "dWsBdA",
+                  "fill": "#4A6B52FF",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Interested in carrying Rooted Right Farms products at your dispensary? We'd love to build a relationship with you. Reach out and let's talk about how we can work together.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                },
+                {
+                  "type": "frame",
+                  "id": "83bC7",
+                  "name": "dWsCtA",
+                  "fill": "#2D5E3AFF",
+                  "cornerRadius": 4,
+                  "padding": [
+                    16,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XMkJO",
+                      "name": "dWsCtTxA",
+                      "fill": "#FFFFFFFF",
+                      "content": "Contact for Wholesale",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "msUdk",
+              "name": "dWsImgA",
+              "metadata": {
+                "type": "unsplash",
+                "username": "covasoftware",
+                "link": "https://unsplash.com/@covasoftware",
+                "author": "Cova Software"
+              },
+              "clip": true,
+              "width": 480,
+              "height": 360,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1764795850216-7bba254f8dcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM4OTB8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 4
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "l6b7l",
+          "name": "dFtA",
+          "width": "fill_container",
+          "fill": "#1B3A28FF",
+          "padding": [
+            40,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lN5Gl",
+              "name": "dFtLA",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UKVTm",
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/logo.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "49eLi",
+                  "name": "dFtCpA",
+                  "fill": "#4A6B52FF",
+                  "content": "© 2026 Rooted Right Farms. All rights reserved.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uN9a0",
+              "name": "dFtCA",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dlffY",
+                  "name": "dftl1A",
+                  "fill": "#D6DDD0FF",
+                  "content": "Strains",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "zr7hB",
+                  "name": "dftl2A",
+                  "fill": "#D6DDD0FF",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "ipfrF",
+                  "name": "dftl3A",
+                  "fill": "#D6DDD0FF",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wjSd0",
+              "name": "dFtSA",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "uMVHN",
+                  "name": "dFtIgA",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#D6DDD0FF"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "j5y7M",
+                  "name": "dFtFbA",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "facebook",
+                  "iconFontFamily": "lucide",
+                  "fill": "#D6DDD0FF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Y1Ro7",
+      "x": 0,
+      "y": 6200,
+      "name": "Desktop B — Editorial Scientific",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "oYLix",
+          "name": "dNavB",
+          "width": "fill_container",
+          "padding": [
+            18,
+            60
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "MN4he",
+              "width": 44,
+              "height": 44,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/logo.png",
+                "mode": "fit"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "Czt7h",
+              "name": "dNlB",
+              "gap": 36,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yJBDT",
+                  "name": "dn1B",
+                  "fill": "#6B7B6BFF",
+                  "content": "Strains",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "MMTlw",
+                  "name": "dn2B",
+                  "fill": "#6B7B6BFF",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "9s9XV",
+                  "name": "dn3B",
+                  "fill": "#6B7B6BFF",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "frame",
+                  "id": "a955Q",
+                  "name": "dNcB",
+                  "fill": "#2D6B3FFF",
+                  "cornerRadius": 6,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "w1eCz",
+                      "name": "dNcTxB",
+                      "fill": "#FFFFFFFF",
+                      "content": "Wholesale Inquiry",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "gGmCD",
+          "name": "dBrdB",
+          "fill": "#E0E5DCFF",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "b1Kdb",
+          "name": "dHeroB",
+          "width": "fill_container",
+          "gap": 60,
+          "padding": [
+            60,
+            80,
+            40,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "WaUCt",
+              "name": "dHLB",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CgPUj",
+                  "name": "dHEyB",
+                  "fill": "#808A80FF",
+                  "content": "PRECISION CANNABIS · ARDMORE, OK",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 2.5
+                },
+                {
+                  "type": "text",
+                  "id": "Gqu3Z",
+                  "name": "dHHdB",
+                  "fill": "#1E3322FF",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Science-Led\nCultivation\nfor Oklahoma",
+                  "lineHeight": 1.05,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 60
+                },
+                {
+                  "type": "text",
+                  "id": "4dxq5",
+                  "name": "dHSubB",
+                  "fill": "#6B7B6BFF",
+                  "textGrowth": "fixed-width",
+                  "width": 460,
+                  "content": "Premium cultivars rooted in botany, grown with purpose, and delivered with care to dispensaries across the state.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 17
+                },
+                {
+                  "type": "frame",
+                  "id": "qJ6cm",
+                  "name": "dHCrB",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "EyfrJ",
+                      "name": "dHCpB",
+                      "fill": "#2D6B3FFF",
+                      "cornerRadius": 6,
+                      "padding": [
+                        16,
+                        28
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "E4FGY",
+                          "name": "dHCpTxB",
+                          "fill": "#FFFFFFFF",
+                          "content": "Our Strains",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gdvND",
+                      "name": "dHCsB",
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1.5,
+                        "fill": "#1E3322FF"
+                      },
+                      "padding": [
+                        16,
+                        28
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NFHZG",
+                          "name": "dHCsTxB",
+                          "fill": "#1E3322FF",
+                          "content": "Contact Us",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "T0qB2",
+              "name": "dHImgB",
+              "metadata": {
+                "type": "unsplash",
+                "username": "maxxna",
+                "link": "https://unsplash.com/@maxxna",
+                "author": "Mona Bernhardsen"
+              },
+              "clip": true,
+              "width": 520,
+              "height": 440,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1682073572475-8484f75a071f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5MTl8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 6
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eL08o",
+          "name": "dLndB",
+          "metadata": {
+            "type": "unsplash",
+            "username": "onkysf",
+            "link": "https://unsplash.com/@onkysf",
+            "author": "Yusuf Onuk"
+          },
+          "clip": true,
+          "width": "fill_container",
+          "height": 400,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1771476472926-c4aaef42b6fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5MzJ8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "kkUGC",
+              "x": 60,
+              "y": 350,
+              "name": "dFgB",
+              "fill": "#FFFFFFCC",
+              "cornerRadius": 4,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AmLMb",
+                  "name": "dFgTxB",
+                  "fill": "#1E3322FF",
+                  "content": "FIG. 001 — CULTIVATION FACILITY · ARDMORE, OK",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Wbj34",
+          "name": "dStB",
+          "width": "fill_container",
+          "fill": "#1E3322FF",
+          "padding": [
+            28,
+            80
+          ],
+          "justifyContent": "space_around",
+          "children": [
+            {
+              "type": "frame",
+              "id": "VT3DO",
+              "name": "ds1B",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MDi85",
+                  "name": "ds1nB",
+                  "fill": "#FFFFFFFF",
+                  "content": "4+",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "cTLwO",
+                  "name": "ds1lB",
+                  "fill": "#808A80FF",
+                  "content": "CULTIVAR STRAINS",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DiknL",
+              "name": "ds2B",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "E8vYg",
+                  "name": "ds2nB",
+                  "fill": "#FFFFFFFF",
+                  "content": "100%",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "D8oYc",
+                  "name": "ds2lB",
+                  "fill": "#808A80FF",
+                  "content": "OKLAHOMA GROWN",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uc9Wd",
+              "name": "ds3B",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3h0fR",
+                  "name": "ds3nB",
+                  "fill": "#FFFFFFFF",
+                  "content": "B2B",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "Wy3N9",
+                  "name": "ds3lB",
+                  "fill": "#808A80FF",
+                  "content": "WHOLESALE PARTNERS",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SUdFx",
+          "name": "dAbB",
+          "width": "fill_container",
+          "gap": 80,
+          "padding": [
+            60,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "oE7mp",
+              "name": "dAbImB",
+              "metadata": {
+                "type": "unsplash",
+                "username": "justmee_project",
+                "link": "https://unsplash.com/@justmee_project",
+                "author": "Justmee Project"
+              },
+              "clip": true,
+              "width": 500,
+              "height": 380,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1739861084565-b682dae2adcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5NDN8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 6,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zw63j",
+                  "x": 16,
+                  "y": 340,
+                  "name": "dAbFgB",
+                  "fill": "#FFFFFFCC",
+                  "cornerRadius": 4,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qli29",
+                      "name": "dAbFgTxB",
+                      "fill": "#1E3322FF",
+                      "content": "FIG. 002 — QUALITY INSPECTION",
+                      "fontFamily": "Inter",
+                      "fontSize": 9,
+                      "fontWeight": "500",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lNDpJ",
+              "name": "dAbRB",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TCboj",
+                  "name": "dAbLbB",
+                  "fill": "#808A80FF",
+                  "content": "FIG. 002 — ABOUT",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500",
+                  "letterSpacing": 2.5
+                },
+                {
+                  "type": "text",
+                  "id": "T2uKn",
+                  "name": "dAbHdB",
+                  "fill": "#1E3322FF",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Passion for Science,\nHealth & Healing",
+                  "lineHeight": 1.2,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36
+                },
+                {
+                  "type": "text",
+                  "id": "zS9Hg",
+                  "name": "dAbBdB",
+                  "fill": "#6B7B6BFF",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Our mission is to bring precision growing techniques to the medical marijuana industry in Oklahoma, and to form close relationships with dispensaries to supply them with top quality, affordable products.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Inter",
+                  "fontSize": 15
+                },
+                {
+                  "type": "rectangle",
+                  "id": "XByW5",
+                  "name": "dAbLnB",
+                  "fill": "#2D6B3FFF",
+                  "width": 40,
+                  "height": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "n2wdv",
+          "name": "dStSecB",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            60,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "7PG3c",
+              "name": "dStHrB",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CPUZj",
+                  "name": "dStHlB",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QW8kf",
+                      "name": "dStLbB",
+                      "fill": "#808A80FF",
+                      "content": "FIG. 003 — CULTIVARS",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 2.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "DXFMn",
+                      "name": "dStHdB",
+                      "fill": "#1E3322FF",
+                      "content": "Our Strains",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 40
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4Tebx",
+                  "name": "dStVaB",
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1.5,
+                    "fill": "#1E3322FF"
+                  },
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DvvZn",
+                      "name": "dStVaTxB",
+                      "fill": "#1E3322FF",
+                      "content": "View All Strains",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lRfjD",
+              "name": "dCgB",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BgxaZ",
+                  "name": "dc1B",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F8F9F7FF",
+                  "cornerRadius": 6,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000008",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RFpLQ",
+                      "name": "dc1iB",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "testeurdecbd",
+                        "link": "https://unsplash.com/@testeurdecbd",
+                        "author": "Testeur de CBD"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1630678692476-acf8b341003d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5NTh8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qMx7Q",
+                      "name": "dc1bB",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tF03m",
+                          "name": "dc1nB",
+                          "fill": "#1E3322FF",
+                          "content": "Banana Candy",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eQhW0",
+                          "name": "dc1tB",
+                          "fill": "#2D6B3FFF",
+                          "content": "HYBRID",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "3T05d",
+                          "name": "dc1dB",
+                          "fill": "#6B7B6BFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Sweet tropical flavors with a smooth, relaxing finish.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        },
+                        {
+                          "type": "text",
+                          "id": "WiLXB",
+                          "name": "dc1cB",
+                          "fill": "#2D6B3FFF",
+                          "content": "Details →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wcIE3",
+                  "name": "dc2B",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F8F9F7FF",
+                  "cornerRadius": 6,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000008",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "V0Fq2",
+                      "name": "dc2iB",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "dannysgallegos",
+                        "link": "https://unsplash.com/@dannysgallegos",
+                        "author": "Danny Gallegos"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1657294656494-78e2ea745441?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5NzV8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2PpIi",
+                      "name": "dc2bB",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UzNpp",
+                          "name": "dc2nB",
+                          "fill": "#1E3322FF",
+                          "content": "Pine Bud",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "TPCrc",
+                          "name": "dc2tB",
+                          "fill": "#2D6B3FFF",
+                          "content": "SATIVA",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "V7U6A",
+                          "name": "dc2dB",
+                          "fill": "#6B7B6BFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Piney, earthy aromatics with an energizing cerebral lift.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        },
+                        {
+                          "type": "text",
+                          "id": "3Ofy3",
+                          "name": "dc2cB",
+                          "fill": "#2D6B3FFF",
+                          "content": "Details →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wCmRi",
+                  "name": "dc3B",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F8F9F7FF",
+                  "cornerRadius": 6,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000008",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wsW2h",
+                      "name": "dc3iB",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "antoniopalha",
+                        "link": "https://unsplash.com/@antoniopalha",
+                        "author": "António Palha"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1633616668876-f9797be34549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5NzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s4T9f",
+                      "name": "dc3bB",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Yk0ho",
+                          "name": "dc3nB",
+                          "fill": "#1E3322FF",
+                          "content": "TropicanaCookies",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "37ohM",
+                          "name": "dc3tB",
+                          "fill": "#2D6B3FFF",
+                          "content": "SATIVA DOMINANT",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "enHz6",
+                          "name": "dc3dB",
+                          "fill": "#6B7B6BFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Citrus-forward with a creative, uplifting high.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        },
+                        {
+                          "type": "text",
+                          "id": "QwFCR",
+                          "name": "dc3cB",
+                          "fill": "#2D6B3FFF",
+                          "content": "Details →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "WABaD",
+                  "name": "dc4B",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#F8F9F7FF",
+                  "cornerRadius": 6,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000008",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CBce3",
+                      "name": "dc4iB",
+                      "metadata": {
+                        "type": "unsplash",
+                        "username": "testeurdecbd",
+                        "link": "https://unsplash.com/@testeurdecbd",
+                        "author": "Testeur de CBD"
+                      },
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1742934398521-f31b83d376fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5NzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ao1PQ",
+                      "name": "dc4bB",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        16,
+                        16,
+                        20,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "7ZE2U",
+                          "name": "dc4nB",
+                          "fill": "#1E3322FF",
+                          "content": "Pie Hoe",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MojPX",
+                          "name": "dc4tB",
+                          "fill": "#2D6B3FFF",
+                          "content": "INDICA DOMINANT · 60/40",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZzubJ",
+                          "name": "dc4dB",
+                          "fill": "#6B7B6BFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Herbal berry with nutty diesel. Grape Pie × Tahoe OG.",
+                          "lineHeight": 1.5,
+                          "fontFamily": "Inter",
+                          "fontSize": 13
+                        },
+                        {
+                          "type": "text",
+                          "id": "PVK7p",
+                          "name": "dc4cB",
+                          "fill": "#2D6B3FFF",
+                          "content": "Details →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xOOn9",
+          "name": "dWsB",
+          "metadata": {
+            "type": "unsplash",
+            "username": "partofworld",
+            "link": "https://unsplash.com/@partofworld",
+            "author": "Jeong yunji"
+          },
+          "clip": true,
+          "width": "fill_container",
+          "height": 360,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "https://images.unsplash.com/photo-1774365827532-214443a53d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzYwODM5OTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "DaOvv",
+              "x": 0,
+              "y": 0,
+              "name": "dWsOvB",
+              "fill": "#1E3322DD",
+              "width": 1440,
+              "height": 360
+            },
+            {
+              "type": "frame",
+              "id": "jeEzk",
+              "x": 0,
+              "y": 0,
+              "name": "dWsCtB",
+              "width": 1440,
+              "height": 360,
+              "layout": "vertical",
+              "gap": 20,
+              "padding": [
+                0,
+                80
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "46dce",
+                  "name": "dWsHdB",
+                  "fill": "#FFFFFFFF",
+                  "content": "Partner With Us",
+                  "textAlign": "center",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 44
+                },
+                {
+                  "type": "text",
+                  "id": "qfXFX",
+                  "name": "dWsBdB",
+                  "fill": "#FFFFFFCC",
+                  "textGrowth": "fixed-width",
+                  "width": 520,
+                  "content": "Interested in carrying Rooted Right Farms products at your dispensary? We'd love to hear from you.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                },
+                {
+                  "type": "frame",
+                  "id": "IuSpZ",
+                  "name": "dWsCtaB",
+                  "fill": "#2D6B3FFF",
+                  "cornerRadius": 6,
+                  "padding": [
+                    16,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ExUFV",
+                      "name": "dWsCtaTxB",
+                      "fill": "#FFFFFFFF",
+                      "content": "Get in Touch",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WSFAf",
+          "name": "dFtB",
+          "width": "fill_container",
+          "padding": [
+            40,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "5P5VS",
+              "name": "dFtLB",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "IVrLR",
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/logo.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "3r8JR",
+                  "name": "dFtCpB",
+                  "fill": "#808A80FF",
+                  "content": "© 2026 Rooted Right Farms",
+                  "fontFamily": "Inter",
+                  "fontSize": 12
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "iXQI2",
+              "name": "dFtCB",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "jbHye",
+                  "name": "dftl1B",
+                  "fill": "#6B7B6BFF",
+                  "content": "Strains",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "Cyuhu",
+                  "name": "dftl2B",
+                  "fill": "#6B7B6BFF",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                },
+                {
+                  "type": "text",
+                  "id": "1fDWQ",
+                  "name": "dftl3B",
+                  "fill": "#6B7B6BFF",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 13
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vH1iG",
+              "name": "dFtSB",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "uOSQU",
+                  "name": "dFtIgB",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7B6BFF"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "WzilH",
+                  "name": "dFtFbB",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "facebook",
+                  "iconFontFamily": "lucide",
+                  "fill": "#6B7B6BFF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
