@@ -1,4 +1,6 @@
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createSupabaseAnonClient } from "@/lib/supabase/anon";
 import type { Strain, StrainType } from "./types";
 import type { StrainAdminInput } from "./admin-schema";
 import type {
@@ -61,12 +63,33 @@ function inputToWrite(input: StrainAdminInput) {
   };
 }
 
+/**
+ * Public reads use the cookie-free anon client so they stay callable at
+ * build-time (generateStaticParams, ISR) and from pages that don't need
+ * the current user's session. The select_strains_public RLS policy
+ * surfaces only published rows to the `anon` role.
+ */
+function publicClient(): SupabaseClient {
+  return createSupabaseAnonClient();
+}
+
+/**
+ * Admin reads (drafts) and all writes use the cookie-aware server client
+ * so auth.uid() resolves to the signed-in user. RLS (see
+ * 20260414000010) gates admin behavior against public.user_roles.
+ */
+async function authClient(): Promise<SupabaseClient> {
+  // The ssr client is a superset of the js client for our purposes.
+  return (await createSupabaseServerClient()) as unknown as SupabaseClient;
+}
+
 export function createSupabaseStrainRepository(): StrainRepository {
   return {
     async listStrains(options) {
-      const supabase = await createSupabaseServerClient();
+      const includeDrafts = Boolean(options?.includeDrafts);
+      const supabase = includeDrafts ? await authClient() : publicClient();
       let query = supabase.from("strains").select("*");
-      if (!options?.includeDrafts) query = query.eq("is_published", true);
+      if (!includeDrafts) query = query.eq("is_published", true);
       if (options?.type) query = query.eq("type", options.type);
       query = query.order("updated_at", { ascending: false });
       const { data, error } = await query;
@@ -75,13 +98,14 @@ export function createSupabaseStrainRepository(): StrainRepository {
     },
 
     async getStrainBySlug(slug, options: GetStrainOptions = {}) {
-      const supabase = await createSupabaseServerClient();
+      const includeDrafts = Boolean(options.includeDrafts);
+      const supabase = includeDrafts ? await authClient() : publicClient();
       let query = supabase
         .from("strains")
         .select("*")
         .eq("slug", slug)
         .limit(1);
-      if (!options.includeDrafts) query = query.eq("is_published", true);
+      if (!includeDrafts) query = query.eq("is_published", true);
       const { data, error } = await query.maybeSingle();
       if (error && error.code !== "PGRST116") {
         throw new Error(`getStrainBySlug failed: ${error.message}`);
@@ -90,7 +114,7 @@ export function createSupabaseStrainRepository(): StrainRepository {
     },
 
     async getRelatedStrains(type, excludeSlug, limit = 3) {
-      const supabase = await createSupabaseServerClient();
+      const supabase = publicClient();
       const { data, error } = await supabase
         .from("strains")
         .select("*")
@@ -103,7 +127,7 @@ export function createSupabaseStrainRepository(): StrainRepository {
     },
 
     async saveStrain(input, options: SaveStrainOptions = {}) {
-      const supabase = await createSupabaseServerClient();
+      const supabase = await authClient();
       const write = inputToWrite(input);
       const originalSlug = options.originalSlug;
 
@@ -128,7 +152,7 @@ export function createSupabaseStrainRepository(): StrainRepository {
     },
 
     async deleteStrain(slug) {
-      const supabase = await createSupabaseServerClient();
+      const supabase = await authClient();
       const { error } = await supabase.from("strains").delete().eq("slug", slug);
       if (error) throw new Error(`deleteStrain failed: ${error.message}`);
     },
