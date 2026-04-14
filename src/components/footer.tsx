@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { primaryNav, socialLinks } from "@/lib/nav";
+import { getSiteConfig } from "@/lib/site-config";
 
 export function Footer() {
+  const { copyright } = getSiteConfig();
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)] pt-16 pb-32 lg:pb-16">
       <div className="container-site grid gap-10 lg:grid-cols-3 lg:items-start">
@@ -13,7 +15,10 @@ export function Footer() {
             Premium indoor hydroponic cannabis — Ardmore, Oklahoma.
           </p>
           <p className="text-xs text-[var(--color-ink-subtle)]">
-            © {new Date().getFullYear()} Rooted Right Farms. All rights reserved.
+            © {copyright.year} Rooted Right Farms. All rights reserved.
+          </p>
+          <p className="text-xs text-[var(--color-ink-subtle)]">
+            {copyright.licenseText}
           </p>
         </div>
 

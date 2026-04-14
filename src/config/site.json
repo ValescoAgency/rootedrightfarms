@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "tagline": "Premium indoor hydroponic cannabis.",
+    "subtitle": "Cultivated in Ardmore, Oklahoma. Wholesale to licensed dispensaries.",
+    "_todo": "Replace with final copy approved by client"
+  },
+  "contact": {
+    "email": "hello@rootedrightfarms.com",
+    "phone": "",
+    "address": {
+      "street": "",
+      "city": "Ardmore",
+      "state": "OK",
+      "postalCode": ""
+    },
+    "replyWindow": "Reply within 1 business day",
+    "_todo": "Client owes: phone, street, postal code"
+  },
+  "social": {
+    "instagram": "rootedrightfarms",
+    "facebook": "",
+    "_todo": "Confirm facebook handle with client"
+  },
+  "trustBar": [
+    {
+      "key": "license",
+      "label": "OBNDD License # PENDING",
+      "icon": "shield",
+      "_todo": "Replace PENDING with real license number"
+    },
+    {
+      "key": "cultivation",
+      "label": "Indoor Hydroponic",
+      "icon": "leaf"
+    },
+    {
+      "key": "compliance",
+      "label": "METRC Compliant",
+      "icon": "badge-check"
+    },
+    {
+      "key": "lab",
+      "label": "Lab Partner: PENDING",
+      "icon": "flask",
+      "_todo": "Client to provide testing lab partner name"
+    },
+    {
+      "key": "reply",
+      "label": "Reply within 1 business day",
+      "icon": "clock"
+    }
+  ],
+  "copyright": {
+    "year": 2026,
+    "licenseText": "For licensed Oklahoma dispensaries. 21+ only."
+  }
+}
