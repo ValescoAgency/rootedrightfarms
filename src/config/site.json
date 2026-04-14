@@ -6,15 +6,17 @@
   },
   "contact": {
     "email": "hello@rootedrightfarms.com",
-    "phone": "",
+    "phone": "(817) 991-7971",
     "address": {
-      "street": "",
+      "street": "315 Drew St. SW",
       "city": "Ardmore",
       "state": "OK",
-      "postalCode": ""
+      "postalCode": "73401"
     },
-    "replyWindow": "Reply within 1 business day",
-    "_todo": "Client owes: phone, street, postal code"
+    "replyWindow": "Reply within 1 business day"
+  },
+  "license": {
+    "obndd": "10001267"
   },
   "social": {
     "instagram": "rootedrightfarms",
@@ -24,9 +26,8 @@
   "trustBar": [
     {
       "key": "license",
-      "label": "OBNDD License # PENDING",
-      "icon": "shield",
-      "_todo": "Replace PENDING with real license number"
+      "label": "OBNDD License # 10001267",
+      "icon": "shield"
     },
     {
       "key": "cultivation",
