@@ -2,6 +2,9 @@
 
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const HIDDEN_ON_PATHS = new Set(["/age-check", "/age-blocked"]);
 
 const COOKIE = "rrf_cookie_dismissed";
 const MAX_AGE_DAYS = 365;
@@ -35,8 +38,10 @@ export function CookieBanner() {
     () => true,
   );
   const [locallyDismissed, setLocallyDismissed] = useState(false);
+  const pathname = usePathname();
 
   if (dismissed || locallyDismissed) return null;
+  if (pathname && HIDDEN_ON_PATHS.has(pathname)) return null;
 
   return (
     <div
