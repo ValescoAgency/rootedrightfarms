@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 import {
   INQUIRY_TYPES,
   INQUIRY_LABELS,
@@ -22,6 +23,13 @@ const labelClass =
 export function ContactForm({ defaultInquiry }: Props) {
   const [state, formAction, pending] = useActionState(submitContactAction, null);
   const [inquiry, setInquiry] = useState<InquiryType>(defaultInquiry);
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (state?.data && !tracked.current) {
+      tracked.current = true;
+      track("contact_submitted", { inquiry_type: state.data.inquiryType });
+    }
+  }, [state]);
 
   if (state?.data) {
     return <ThanksOverlay />;
