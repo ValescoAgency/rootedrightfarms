@@ -128,30 +128,46 @@ async function waitForAnyImageLoaded(
   }
 }
 
-test("home page hero renders", async ({ page }) => {
+test("home page hero renders + any visible strain cards have images", async ({
+  page,
+}) => {
   await gotoWithoutAgeGate(page, "/");
-  // Hero: at least one of the two responsive variants must load. This is the
-  // deploy-level contract — "the page came up and our hero assets resolve."
-  //
-  // We intentionally don't assert on strain card images here. Those URLs are
-  // driven by Supabase data; the preview/prod DB can hold stale
-  // `hero_image_url` values that pre-date PR #27's path rename (see
-  // migration 20260414000011_resync_strain_image_paths.sql) and the admin
-  // UI can point new strains at Storage URLs we don't own. Code-level path
-  // regressions (typos, deleted files) are already covered by
-  // `src/test/image-assets.test.ts`.
+
+  // Hero: at least one of the two responsive variants must load.
   await waitForAnyImageLoaded(page, 'section[aria-label="Hero"] img');
+
+  // Strain cards: scope to `src^="/images/"` — only assert on locally-served
+  // images we own. Admin-uploaded strains point at Supabase-Storage URLs
+  // which aren't this PR's concern. If none are present (empty Supabase or
+  // all-external strains), skip silently.
+  const ownedCards = page.locator(
+    'section[aria-label="Featured strains"] ul li img[src^="/images/"]',
+  );
+  if ((await ownedCards.count()) > 0) {
+    await waitForAnyImageLoaded(
+      page,
+      'section[aria-label="Featured strains"] ul li img[src^="/images/"]',
+    );
+  }
 });
 
-test("strains catalog page hero renders", async ({ page }) => {
+test("strains catalog page hero renders + any visible cards have images", async ({
+  page,
+}) => {
   await gotoWithoutAgeGate(page, "/strains");
+
   // Next Image encodes the source path into `/_next/image?url=…%2Fstrains-hero%2F…`,
-  // so we match both attrs. Card-image assertions intentionally omitted —
-  // see home-page test for rationale.
+  // so we match both attrs.
   await waitForAnyImageLoaded(
     page,
     'img[src*="strains-hero"], img[srcset*="strains-hero"]',
   );
+
+  // Same scoping as the home page — see above.
+  const ownedCards = page.locator('ul li img[src^="/images/"]');
+  if ((await ownedCards.count()) > 0) {
+    await waitForAnyImageLoaded(page, 'ul li img[src^="/images/"]');
+  }
 });
 
 test("about page hero renders", async ({ page }) => {
