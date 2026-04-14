@@ -6,8 +6,8 @@ import type { Strain } from "./types";
  * without `supabase start`, build time before DB is provisioned) and as
  * the fixture for repository unit tests.
  *
- * TODO(content): replace placeholder copy + images for Banana Candy, Pine
- * Bud, and TropicanaCookies once client delivers final content.
+ * TODO(content): replace placeholder copy for Banana Candy, Pine Bud,
+ * and TropicanaCookies once client delivers final content.
  */
 export const seedStrains: Strain[] = [
   {
@@ -22,7 +22,7 @@ export const seedStrains: Strain[] = [
     lineage: "Grape Pie × Tahoe OG",
     flavors: ["cherry", "earth", "spice", "vanilla"],
     effects: ["relaxed", "euphoric", "creative"],
-    heroImageUrl: "/images/strains/pie-hoe-card-desktop.jpg",
+    heroImageUrl: "/images/strains/pie-hoe.jpg",
     galleryImageUrls: [],
     isPublished: true,
     createdAt: "2026-04-14T00:00:00Z",
@@ -40,7 +40,7 @@ export const seedStrains: Strain[] = [
     lineage: "Banana OG × Candyland",
     flavors: ["banana", "tropical", "sweet"],
     effects: ["relaxed", "happy", "uplifted"],
-    heroImageUrl: "/images/strains/banana-candy-card-desktop.jpg",
+    heroImageUrl: "/images/strains/banana-candy.jpg",
     galleryImageUrls: [],
     isPublished: true,
     createdAt: "2026-04-14T00:00:00Z",
@@ -58,7 +58,7 @@ export const seedStrains: Strain[] = [
     lineage: "Jack Herer × Sour Pine",
     flavors: ["pine", "citrus", "earth"],
     effects: ["energetic", "focused", "uplifted"],
-    heroImageUrl: "/images/strains/pine-bud-card-desktop.jpg",
+    heroImageUrl: "/images/strains/pine-bud.jpg",
     galleryImageUrls: [],
     isPublished: true,
     createdAt: "2026-04-14T00:00:00Z",
@@ -76,7 +76,7 @@ export const seedStrains: Strain[] = [
     lineage: "Tropicana × GSC",
     flavors: ["orange", "citrus", "cookie"],
     effects: ["relaxed", "creative", "happy"],
-    heroImageUrl: "/images/strains/tropicana-cookies-card-desktop.jpg",
+    heroImageUrl: "/images/strains/tropicana-cookies.jpg",
     galleryImageUrls: [],
     isPublished: true,
     createdAt: "2026-04-14T00:00:00Z",

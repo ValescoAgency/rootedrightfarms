@@ -6,21 +6,12 @@ pending delivery of real farm photography from the client.
 
 Per Unsplash terms, credit photographers until replaced:
 
-## Strains (cards)
+## Strains
 
-- `strains/banana-candy-card-mobile.jpg` — Christopher Ott (@notso)
-- `strains/pine-bud-card-mobile.jpg` — 2H Media (@2hmedia)
-- `strains/tropicana-cookies-card-mobile.jpg` — Nagy Arnold (@arnold_nagy)
-- `strains/pie-hoe-card-mobile.jpg` — CRYSTALWEED cannabis (@crystalweed)
-- `strains/banana-candy-card-desktop.jpg` — Laura Jaramillo Bernal (@nueracannabis)
-- `strains/pine-bud-card-desktop.jpg` — Philipp (@philstravel)
-- `strains/tropicana-cookies-card-desktop.jpg` — Jakob Andreasen (@jaxdesign)
-- `strains/pie-hoe-card-desktop.jpg` — Andrés Gómez (@andresloquesea)
-
-## Strain detail
-
-- `strains/detail-hero-mobile.jpg` — Unsplash (photo-1690959916826)
-- `strains/detail-hero-desktop.jpg` — Unsplash (photo-1597354641938)
+- `strains/pie-hoe.jpg` — Rooted Right Farms (client-owned).
+- `strains/banana-candy.jpg` — Rooted Right Farms (client-owned).
+- `strains/pine-bud.jpg` — Rooted Right Farms (client-owned).
+- `strains/tropicana-cookies.jpg` — Rooted Right Farms (client-owned).
 
 ## About
 
