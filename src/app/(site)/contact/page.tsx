@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Instagram,
-  Facebook,
 } from "lucide-react";
 import {
   INQUIRY_TYPES,
@@ -135,11 +134,6 @@ export default async function ContactPage({
                   size={20}
                   className="text-[var(--color-ink-inv-muted)] hover:text-[var(--color-ink-inverse)] transition-colors cursor-pointer"
                   aria-label="Instagram"
-                />
-                <Facebook
-                  size={20}
-                  className="text-[var(--color-ink-inv-muted)] hover:text-[var(--color-ink-inverse)] transition-colors cursor-pointer"
-                  aria-label="Facebook"
                 />
               </li>
             </ul>
