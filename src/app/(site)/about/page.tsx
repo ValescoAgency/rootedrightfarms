@@ -12,44 +12,42 @@ export default function AboutPage() {
   const { license } = getSiteConfig();
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="relative aspect-[3/2] lg:aspect-[21/9]">
-          <Image
-            src="/images/about/hero-desktop.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover hidden lg:block"
-          />
-          <Image
-            src="/images/about/hero-mobile.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover lg:hidden"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(27,58,40,0.15) 20%, rgba(27,58,40,0.85) 100%)",
-            }}
-          />
+      <section className="relative overflow-hidden" style={{ height: "clamp(320px, 50vh, 480px)" }}>
+        <Image
+          src="/images/about/hero-desktop.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover hidden lg:block"
+        />
+        <Image
+          src="/images/about/hero-mobile.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover lg:hidden"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(27,58,40,0) 20%, rgba(27,58,40,0.87) 100%)",
+          }}
+        />
+        <div className="relative h-full flex flex-col justify-end container-site pb-8 lg:pb-12">
+          <p
+            className="eyebrow mb-3"
+            style={{ color: "rgba(255,255,255,0.7)" }}
+          >
+            OUR STORY
+          </p>
+          <h1 className="font-serif text-4xl lg:text-6xl leading-[1.08] text-[var(--color-ink-inverse)] max-w-2xl">
+            Passion for Science, Health, &amp; Healing
+          </h1>
         </div>
-      </section>
-      <section className="container-site py-16 lg:py-24">
-        <p className="eyebrow mb-4">FIG. 003 — ABOUT</p>
-        <h1 className="font-serif text-4xl lg:text-6xl max-w-3xl leading-[1.08] mb-8">
-          Premium flower, grown with discipline.
-        </h1>
-        <p className="max-w-2xl text-lg text-[var(--color-ink-muted)]">
-          Rooted Right Farms is an indoor hydroponic cannabis cultivator
-          based in Ardmore, Oklahoma. We grow small-batch, hand-trimmed
-          flower for licensed Oklahoma dispensaries.
-        </p>
       </section>
 
       <section className="surface-dark">
@@ -58,7 +56,7 @@ export default function AboutPage() {
             className="eyebrow mb-4"
             style={{ color: "var(--color-ink-inv-muted)" }}
           >
-            MISSION
+            OUR MISSION
           </p>
           <h2 className="font-serif text-3xl lg:text-4xl mb-6">
             Consistency over volume.
@@ -79,7 +77,7 @@ export default function AboutPage() {
       <section className="container-site py-16 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <p className="eyebrow mb-4">FIG. 004 — METHOD</p>
+            <p className="eyebrow mb-4">WHY INDOOR HYDROPONIC</p>
             <h2 className="font-serif text-3xl lg:text-4xl mb-6">
               Why indoor hydroponic.
             </h2>
