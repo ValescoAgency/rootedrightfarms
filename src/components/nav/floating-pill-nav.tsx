@@ -13,7 +13,7 @@ export function FloatingPillNav() {
 
   return (
     <nav
-      aria-label="Primary"
+      aria-label="Primary (mobile)"
       className="lg:hidden fixed left-1/2 -translate-x-1/2 z-50"
       style={{ bottom: "16px" }}
     >
