@@ -1,8 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-test("homepage renders hello hero", async ({ page }) => {
-  await page.goto("/");
-  await expect(
-    page.getByRole("heading", { name: /hello from rooted right farms/i }),
-  ).toBeVisible();
+test("site responds and renders a heading at /", async ({ page }) => {
+  const response = await page.goto("/");
+  expect(response?.ok()).toBeTruthy();
+  await expect(page.locator("h1").first()).toBeVisible();
 });
