@@ -81,7 +81,7 @@ function HeroSection({
                 className="text-[11px] font-medium text-[var(--color-ink)]"
                 style={{ letterSpacing: "0.2em" }}
               >
-                FIG. 001 — ARDMORE, OK
+                ARDMORE, OKLAHOMA
               </p>
             </div>
           </ScrollReveal>
@@ -160,7 +160,7 @@ function FeaturedStrains({ strains }: { strains: Strain[] }) {
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 lg:mb-14">
         <ScrollReveal>
           <div>
-            <p className="eyebrow mb-3">FIG. 002 — CATALOG</p>
+            <p className="eyebrow mb-3">CULTIVARS</p>
             <h2 className="font-serif text-3xl lg:text-5xl max-w-xl">
               Flower we&rsquo;re proud to put on the shelf.
             </h2>
