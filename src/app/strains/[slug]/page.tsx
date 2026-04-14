@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getStrainRepository } from "@/lib/strains/repository";
 import { StrainCard } from "@/components/strains/strain-card";
+import { StrainImageZoom } from "@/components/strains/strain-image-zoom";
 import type { StrainType } from "@/lib/strains/types";
 
 const TYPE_LABEL: Record<StrainType, string> = {
@@ -59,28 +60,25 @@ export default async function StrainDetailPage({
       </div>
 
       <section className="container-site py-10 lg:py-16 grid gap-10 lg:gap-16 lg:grid-cols-[5fr_6fr] lg:items-start">
-        <div
-          className="aspect-[4/5] rounded-[var(--radius-sm)] overflow-hidden bg-[color-mix(in_srgb,var(--color-bg-dark)_15%,var(--color-bg))]"
-          aria-hidden={!strain.heroImageUrl}
-        >
-          {strain.heroImageUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element -- placeholder until next/image config lands in VA-42
-            <img
-              src={strain.heroImageUrl}
-              alt={`${strain.name} cannabis bud — ${strain.type}`}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="grid place-items-center h-full">
-              <span
-                className="font-serif text-[var(--color-ink-subtle)]"
-                style={{ fontSize: "4rem" }}
-              >
-                {strain.name.charAt(0)}
-              </span>
-            </div>
-          )}
-        </div>
+        {strain.heroImageUrl ? (
+          <StrainImageZoom
+            src={strain.heroImageUrl}
+            alt={`${strain.name} cannabis bud — ${strain.type}`}
+            className="aspect-[4/5] rounded-[var(--radius-sm)] bg-[color-mix(in_srgb,var(--color-bg-dark)_15%,var(--color-bg))]"
+          />
+        ) : (
+          <div
+            className="aspect-[4/5] rounded-[var(--radius-sm)] overflow-hidden bg-[color-mix(in_srgb,var(--color-bg-dark)_15%,var(--color-bg))] grid place-items-center"
+            aria-hidden="true"
+          >
+            <span
+              className="font-serif text-[var(--color-ink-subtle)]"
+              style={{ fontSize: "4rem" }}
+            >
+              {strain.name.charAt(0)}
+            </span>
+          </div>
+        )}
 
         <div>
           <p
