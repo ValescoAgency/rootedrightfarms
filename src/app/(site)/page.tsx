@@ -1,29 +1,251 @@
 import Link from "next/link";
+import { getSiteConfig } from "@/lib/site-config";
+import { getStrainRepository } from "@/lib/strains/repository";
+import type { Strain } from "@/lib/strains/types";
+import { StrainCard } from "@/components/strains/strain-card";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { hero } = getSiteConfig();
+  const allStrains = await getStrainRepository().listStrains();
+  const featured = allStrains.slice(0, 4);
+
   return (
-    <section className="container-site py-24 lg:py-32">
-      <p className="eyebrow mb-6">FIG. 001 — PIPELINE CHECK</p>
-      <h1 className="font-serif text-5xl lg:text-6xl text-[var(--color-ink)] max-w-3xl">
-        Hello from Rooted Right Farms.
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg text-[var(--color-ink-muted)]">
-        Design tokens, fonts, nav, and footer are wired. This surface proves the
-        pipeline end-to-end before we build real pages.
-      </p>
-      <div className="mt-10 flex gap-4">
-        <Link
-          href="/strains"
-          className="inline-flex items-center px-7 py-3.5 rounded-[var(--radius-md)] bg-[var(--color-accent)] text-[var(--color-ink-inverse)] font-medium text-sm transition-all duration-[var(--duration-quick)] hover:brightness-95"
-        >
-          Browse Strains
-        </Link>
-        <Link
-          href="/contact"
-          className="inline-flex items-center px-7 py-3.5 rounded-full border-[1.5px] border-[var(--color-ink)] text-[var(--color-ink)] font-medium text-sm transition-colors duration-[var(--duration-quick)] hover:bg-[var(--color-ink)] hover:text-[var(--color-ink-inverse)]"
-        >
-          Contact Wholesale
-        </Link>
+    <>
+      <HeroSection tagline={hero.tagline} subtitle={hero.subtitle} />
+      <StatsBar />
+      <FeaturedStrains strains={featured} />
+      <InstagramPlaceholder />
+      <WholesaleCtaBanner />
+    </>
+  );
+}
+
+function HeroSection({
+  tagline,
+  subtitle,
+}: {
+  tagline: string;
+  subtitle: string;
+}) {
+  return (
+    <section
+      aria-label="Hero"
+      className="relative isolate overflow-hidden"
+      style={{ minHeight: "min(84vh, 780px)" }}
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 120% 80% at 30% 20%, color-mix(in srgb, var(--color-primary) 45%, var(--color-bg-dark)) 0%, var(--color-bg-dark) 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(27,58,40,0) 0%, rgba(27,58,40,0.55) 100%)",
+        }}
+      />
+
+      <div className="container-site py-20 lg:py-28 text-[var(--color-ink-inverse)] grid lg:grid-cols-2 lg:gap-12 lg:items-center min-h-[60vh]">
+        <div>
+          <ScrollReveal delayIndex={0}>
+            <div
+              className="inline-block rounded-[var(--radius-sm)] backdrop-blur px-2.5 py-1.5 mb-8"
+              style={{ background: "rgba(255,255,255,0.8)" }}
+            >
+              <p
+                className="text-[11px] font-medium text-[var(--color-ink)]"
+                style={{ letterSpacing: "0.2em" }}
+              >
+                FIG. 001 — ARDMORE, OK
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delayIndex={1}>
+            <h1 className="font-serif text-5xl lg:text-7xl leading-[1.02] tracking-tight max-w-2xl">
+              {tagline}
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delayIndex={2}>
+            <p
+              className="mt-6 text-lg lg:text-xl max-w-xl"
+              style={{ color: "var(--color-ink-inv-muted)" }}
+            >
+              {subtitle}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delayIndex={3}>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact?inquiry=wholesale"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-[var(--radius-md)] bg-[var(--color-accent)] text-[var(--color-ink-inverse)] font-medium text-sm transition-all duration-[var(--duration-quick)] hover:brightness-95"
+              >
+                Wholesale Inquiries
+              </Link>
+              <Link
+                href="/strains"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-[1.5px] border-[var(--color-ink-inverse)] text-[var(--color-ink-inverse)] font-medium text-sm transition-colors duration-[var(--duration-quick)] hover:bg-[var(--color-ink-inverse)] hover:text-[var(--color-ink)]"
+              >
+                Explore Our Strains
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatsBar() {
+  const stats = [
+    { value: "4", label: "Cultivars in rotation" },
+    { value: "100%", label: "Indoor hydroponic" },
+    { value: "Ardmore", label: "Oklahoma, USA" },
+  ];
+  return (
+    <section aria-label="At a glance" className="surface-dark">
+      <div className="container-site py-10 lg:py-14">
+        <ScrollReveal>
+          <dl className="grid grid-cols-3 gap-6 lg:flex lg:justify-around lg:gap-16 text-center lg:text-left">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <dd
+                  className="font-serif font-bold text-3xl lg:text-5xl mb-2"
+                  style={{ color: "var(--color-accent)" }}
+                >
+                  {s.value}
+                </dd>
+                <dt
+                  className="eyebrow"
+                  style={{ color: "var(--color-ink-inv-muted)" }}
+                >
+                  {s.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+function FeaturedStrains({ strains }: { strains: Strain[] }) {
+  return (
+    <section aria-label="Featured strains" className="container-site py-20 lg:py-28">
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 lg:mb-14">
+        <ScrollReveal>
+          <div>
+            <p className="eyebrow mb-3">FIG. 002 — CATALOG</p>
+            <h2 className="font-serif text-3xl lg:text-5xl max-w-xl">
+              Flower we&rsquo;re proud to put on the shelf.
+            </h2>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delayIndex={1}>
+          <Link
+            href="/strains"
+            className="self-start text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+          >
+            See all strains →
+          </Link>
+        </ScrollReveal>
+      </div>
+
+      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {strains.map((s, i) => (
+          <li key={s.id}>
+            <ScrollReveal delayIndex={i}>
+              <StrainCard strain={s} />
+            </ScrollReveal>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function InstagramPlaceholder() {
+  const cells = Array.from({ length: 6 }, (_, i) => i);
+  return (
+    <section
+      aria-label="From Instagram"
+      className="border-t border-[var(--color-border)]"
+    >
+      <div className="container-site py-16 lg:py-24">
+        <ScrollReveal>
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="eyebrow mb-3">FIG. 003 — ON INSTAGRAM</p>
+              <h2 className="font-serif text-3xl lg:text-4xl">
+                From the farm, lately.
+              </h2>
+            </div>
+            <a
+              href="https://www.instagram.com/rootedrightfarms"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              @rootedrightfarms →
+            </a>
+          </div>
+        </ScrollReveal>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-3">
+          {cells.map((i) => (
+            <li key={i}>
+              <ScrollReveal delayIndex={i}>
+                <div
+                  className="aspect-square rounded-[var(--radius-sm)] bg-[color-mix(in_srgb,var(--color-bg-dark)_10%,var(--color-bg))] border border-[var(--color-border)] grid place-items-center"
+                  aria-hidden
+                >
+                  <span className="eyebrow">LOADING FEED</span>
+                </div>
+              </ScrollReveal>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function WholesaleCtaBanner() {
+  return (
+    <section aria-label="Wholesale CTA" className="surface-dark">
+      <div className="container-site py-20 lg:py-24">
+        <ScrollReveal>
+          <div className="max-w-3xl">
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "var(--color-ink-inv-muted)" }}
+            >
+              WHOLESALE
+            </p>
+            <h2 className="font-serif text-4xl lg:text-6xl leading-[1.08] mb-6">
+              Stock flower that moves itself.
+            </h2>
+            <p
+              className="text-lg mb-10 max-w-xl"
+              style={{ color: "var(--color-ink-inv-muted)" }}
+            >
+              We&rsquo;re selective about the dispensaries we partner with.
+              If you care about consistency and your customers come back for
+              a cultivar — let&rsquo;s talk.
+            </p>
+            <Link
+              href="/contact?inquiry=wholesale"
+              className="inline-flex items-center px-8 py-4 rounded-[var(--radius-md)] bg-[var(--color-accent)] text-[var(--color-ink-inverse)] font-medium text-sm transition-all duration-[var(--duration-quick)] hover:brightness-95"
+            >
+              Start a conversation
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
