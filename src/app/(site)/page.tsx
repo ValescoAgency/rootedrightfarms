@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HomePage() {
   return (
     <section className="container-site py-24 lg:py-32">
@@ -10,18 +12,18 @@ export default function HomePage() {
         pipeline end-to-end before we build real pages.
       </p>
       <div className="mt-10 flex gap-4">
-        <a
+        <Link
           href="/strains"
           className="inline-flex items-center px-7 py-3.5 rounded-[var(--radius-md)] bg-[var(--color-accent)] text-[var(--color-ink-inverse)] font-medium text-sm transition-all duration-[var(--duration-quick)] hover:brightness-95"
         >
           Browse Strains
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           className="inline-flex items-center px-7 py-3.5 rounded-full border-[1.5px] border-[var(--color-ink)] text-[var(--color-ink)] font-medium text-sm transition-colors duration-[var(--duration-quick)] hover:bg-[var(--color-ink)] hover:text-[var(--color-ink-inverse)]"
         >
           Contact Wholesale
-        </a>
+        </Link>
       </div>
     </section>
   );
