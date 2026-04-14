@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getStrainRepository } from "@/lib/strains/repository";
 import { STRAIN_TYPES, type StrainType } from "@/lib/strains/types";
@@ -30,29 +29,8 @@ export default async function StrainsPage({
 
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="relative aspect-[3/2] lg:aspect-[21/9]">
-          {/* TODO: swap for client-supplied facility photo when delivered. Placeholder sourced from design/prototypes.pen (see public/images/CREDITS.md). */}
-          <Image
-            src="/images/strains-hero/grow-room.png"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(27,58,40,0.2) 30%, rgba(27,58,40,0.8) 100%)",
-            }}
-          />
-        </div>
-      </section>
       <section className="container-site py-16 lg:py-24">
-        <p className="eyebrow mb-4">FIG. 002 — CATALOG</p>
+        <p className="eyebrow mb-4">CULTIVARS</p>
         <h1 className="font-serif text-4xl lg:text-5xl max-w-2xl mb-6">
           Strains cultivated in Ardmore.
         </h1>
@@ -91,22 +69,15 @@ export default async function StrainsPage({
         )}
       </section>
 
-      <section className="surface-dark relative overflow-hidden">
-        <Image
-          src="/images/wholesale/banner-desktop.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-25"
-        />
-        <div className="relative container-site py-16 lg:py-20 text-center lg:text-left lg:flex lg:items-center lg:justify-between lg:gap-12">
+      <section className="surface-dark">
+        <div className="container-site py-16 lg:py-20 text-center lg:text-left lg:flex lg:items-center lg:justify-between lg:gap-12">
           <div className="max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-0">
-            <h2 className="font-serif text-3xl lg:text-4xl mb-3">
-              Interested in wholesale?
-            </h2>
-            <p className="text-[var(--color-ink-inv-muted)]">
-              Licensed Oklahoma dispensaries — let&rsquo;s talk.
+            <p className="eyebrow mb-3" style={{ color: "var(--color-ink-inv-muted)" }}>
+              DISPENSARY PARTNERS
             </p>
+            <h2 className="font-serif text-3xl lg:text-4xl mb-3">
+              Carry Our Cultivars
+            </h2>
           </div>
           <Link
             href="/contact?inquiry=wholesale"
