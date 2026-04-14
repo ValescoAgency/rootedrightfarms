@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { TopNav } from "@/components/nav/top-nav";
-import { FloatingPillNav } from "@/components/nav/floating-pill-nav";
-import { Footer } from "@/components/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,15 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
-        <TopNav />
-        <main id="main">{children}</main>
-        <Footer />
-        <FloatingPillNav />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
