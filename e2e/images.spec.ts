@@ -151,18 +151,12 @@ test("home page hero renders + any visible strain cards have images", async ({
   }
 });
 
-test("strains catalog page hero renders + any visible cards have images", async ({
+test("strains catalog page: any visible cards have images", async ({
   page,
 }) => {
   await gotoWithoutAgeGate(page, "/strains");
 
-  // Next Image encodes the source path into `/_next/image?url=…%2Fstrains-hero%2F…`,
-  // so we match both attrs.
-  await waitForAnyImageLoaded(
-    page,
-    'img[src*="strains-hero"], img[srcset*="strains-hero"]',
-  );
-
+  // Hero image was removed (VA-63) — no hero assertion here.
   // Same scoping as the home page — see above.
   const ownedCards = page.locator('ul li img[src^="/images/"]');
   if ((await ownedCards.count()) > 0) {
