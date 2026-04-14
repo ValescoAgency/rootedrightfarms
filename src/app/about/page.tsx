@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getSiteConfig } from "@/lib/site-config";
 
 export const metadata = {
   title: "About",
@@ -7,8 +9,37 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+  const { license } = getSiteConfig();
   return (
     <>
+      <section className="relative overflow-hidden">
+        <div className="relative aspect-[3/2] lg:aspect-[21/9]">
+          <Image
+            src="/images/about/hero-desktop.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover hidden lg:block"
+          />
+          <Image
+            src="/images/about/hero-mobile.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover lg:hidden"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(27,58,40,0.15) 20%, rgba(27,58,40,0.85) 100%)",
+            }}
+          />
+        </div>
+      </section>
       <section className="container-site py-16 lg:py-24">
         <p className="eyebrow mb-4">FIG. 003 — ABOUT</p>
         <h1 className="font-serif text-4xl lg:text-6xl max-w-3xl leading-[1.08] mb-8">
@@ -59,6 +90,22 @@ export default function AboutPage() {
               Together they let us hit a target and stay there — which is
               what wholesale buyers actually need.
             </p>
+            <div className="mt-8 relative aspect-[4/3] overflow-hidden rounded-[var(--radius-sm)]">
+              <Image
+                src="/images/about/process-desktop.jpg"
+                alt="Rooted Right Farms cultivation process"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover hidden lg:block"
+              />
+              <Image
+                src="/images/about/process-mobile.jpg"
+                alt="Rooted Right Farms cultivation process"
+                fill
+                sizes="100vw"
+                className="object-cover lg:hidden"
+              />
+            </div>
           </div>
           <div>
             <h3 className="font-serif text-2xl mb-4">Our process</h3>
@@ -160,7 +207,7 @@ export default function AboutPage() {
               <span className="text-[var(--color-ink)] font-medium">
                 OBNDD License:
               </span>{" "}
-              # PENDING
+              # {license.obndd}
             </p>
             <p>
               <span className="text-[var(--color-ink)] font-medium">
