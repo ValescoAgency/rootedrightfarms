@@ -128,49 +128,30 @@ async function waitForAnyImageLoaded(
   }
 }
 
-test("home page hero renders + any visible strain cards have images", async ({
-  page,
-}) => {
+test("home page hero renders", async ({ page }) => {
   await gotoWithoutAgeGate(page, "/");
-
-  // Hero is the non-negotiable — at least one of the two responsive variants
-  // must load.
+  // Hero: at least one of the two responsive variants must load. This is the
+  // deploy-level contract — "the page came up and our hero assets resolve."
+  //
+  // We intentionally don't assert on strain card images here. Those URLs are
+  // driven by Supabase data; the preview/prod DB can hold stale
+  // `hero_image_url` values that pre-date PR #27's path rename (see
+  // migration 20260414000011_resync_strain_image_paths.sql) and the admin
+  // UI can point new strains at Storage URLs we don't own. Code-level path
+  // regressions (typos, deleted files) are already covered by
+  // `src/test/image-assets.test.ts`.
   await waitForAnyImageLoaded(page, 'section[aria-label="Hero"] img');
-
-  // Strain cards: "at least one card image loads" is the contract here.
-  // We can't require "all" because the Vercel preview's Supabase may hold
-  // stale `hero_image_url` values that pre-date PR #27's path rename
-  // (see migration 20260414000011_resync_strain_image_paths.sql — forward
-  // fix for environments that need it). Path-level regressions in *code*
-  // are caught by `src/test/image-assets.test.ts` instead.
-  const cardImgs = page.locator(
-    'section[aria-label="Featured strains"] ul li img',
-  );
-  if ((await cardImgs.count()) > 0) {
-    await waitForAnyImageLoaded(
-      page,
-      'section[aria-label="Featured strains"] ul li img',
-    );
-  }
 });
 
-test("strains catalog page hero renders + any visible cards have images", async ({
-  page,
-}) => {
+test("strains catalog page hero renders", async ({ page }) => {
   await gotoWithoutAgeGate(page, "/strains");
-
   // Next Image encodes the source path into `/_next/image?url=…%2Fstrains-hero%2F…`,
-  // so we match both attrs.
+  // so we match both attrs. Card-image assertions intentionally omitted —
+  // see home-page test for rationale.
   await waitForAnyImageLoaded(
     page,
     'img[src*="strains-hero"], img[srcset*="strains-hero"]',
   );
-
-  // Same "at least one card loads" contract as the home page — see above.
-  const cardImgs = page.locator("ul li img");
-  if ((await cardImgs.count()) > 0) {
-    await waitForAnyImageLoaded(page, "ul li img");
-  }
 });
 
 test("about page hero renders", async ({ page }) => {
