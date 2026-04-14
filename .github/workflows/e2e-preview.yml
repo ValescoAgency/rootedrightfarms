@@ -12,6 +12,12 @@ jobs:
       github.event.deployment_status.environment != 'production' &&
       github.event.deployment_status.environment != 'Production'
     runs-on: ubuntu-latest
+    # Keep this tag in sync with the @playwright/test version in package.json.
+    # Mismatch → browsers baked into the image won't match Playwright's expected
+    # revisions and tests will fail at startup.
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
+      options: --user 1001
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -20,13 +26,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
-
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium webkit
 
       - name: Run Playwright against Vercel preview
         run: pnpm exec playwright test
