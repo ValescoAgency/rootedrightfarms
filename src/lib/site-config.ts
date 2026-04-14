@@ -25,6 +25,9 @@ const siteConfigSchema = z.object({
     }),
     replyWindow: z.string().min(1),
   }),
+  license: z.object({
+    obndd: z.string().min(1),
+  }),
   social: z.object({
     instagram: z.string(),
     facebook: z.string(),

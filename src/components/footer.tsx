@@ -4,7 +4,7 @@ import { getSiteConfig } from "@/lib/site-config";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export function Footer() {
-  const { copyright } = getSiteConfig();
+  const { copyright, license } = getSiteConfig();
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)] pt-16 pb-32 lg:pb-16">
       <div className="container-site space-y-12 lg:space-y-16">
@@ -39,6 +39,9 @@ export function Footer() {
           </p>
           <p className="text-xs text-[var(--color-ink-subtle)]">
             {copyright.licenseText}
+          </p>
+          <p className="text-xs text-[var(--color-ink-subtle)]">
+            OBNDD Registration # {license.obndd}
           </p>
         </div>
 

@@ -9,6 +9,7 @@ const validConfig = {
     address: { street: "", city: "Ardmore", state: "OK", postalCode: "" },
     replyWindow: "Reply within 1 business day",
   },
+  license: { obndd: "10001267" },
   social: { instagram: "rrf", facebook: "" },
   trustBar: [{ key: "license", label: "OBNDD #123", icon: "shield" }],
   copyright: { year: 2026, licenseText: "21+ only." },
