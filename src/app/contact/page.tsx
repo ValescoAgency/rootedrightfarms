@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   INQUIRY_TYPES,
   type InquiryType,
@@ -69,6 +70,26 @@ export default async function ContactPage({
           <ContactForm defaultInquiry={defaultInquiry} />
         </div>
         <aside className="space-y-6 lg:pl-8 lg:border-l lg:border-[var(--color-border)]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)]">
+            {/* TODO: swap for client-supplied dispensary/partner photo when delivered. Placeholder sourced from design/prototypes.pen (see public/images/CREDITS.md). */}
+            <Image
+              src="/images/contact/dispensary-shelf.png"
+              alt="Dispensary shelf displaying Rooted Right Farms flower"
+              fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover"
+            />
+            <div
+              className="absolute left-3 bottom-3 rounded-[var(--radius-sm)] bg-[rgba(255,255,255,0.85)] backdrop-blur px-2.5 py-1.5"
+            >
+              <p
+                className="text-[10px] font-medium text-[var(--color-ink)]"
+                style={{ letterSpacing: "0.2em" }}
+              >
+                FIG. 006.A — PARTNER SHELVES
+              </p>
+            </div>
+          </div>
           <div>
             <p className="eyebrow mb-2">DIRECT</p>
             <p className="text-base text-[var(--color-ink)]">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -12,6 +13,9 @@ interface Service {
   description: string;
   bullets: string[];
   inquiry: string;
+  image: string;
+  imageAlt: string;
+  imageFig: string;
   todo?: string;
 }
 
@@ -30,6 +34,9 @@ const services: Service[] = [
       "Cultivar selection tuned to your market and facility",
     ],
     inquiry: "nursery-design",
+    image: "/images/services/nursery-design.png",
+    imageAlt: "Cultivator inspecting flower in a Rooted Right Farms grow room",
+    imageFig: "FIG. 005.A — CANOPY INSPECTION",
     todo: "Jeff approval — copy is Jason-drafted from merged Nursery + Design offering",
   },
   {
@@ -43,6 +50,10 @@ const services: Service[] = [
       "Scale-up from TC to clones on request",
     ],
     inquiry: "tissue-cultures",
+    image: "/images/services/tissue-cultures.png",
+    imageAlt:
+      "Lab technician examining a hydroponic root system at Rooted Right Farms",
+    imageFig: "FIG. 005.B — HYDROPONIC ROOT SYSTEM",
     todo: "Jeff approval — tissue culture capability + pricing",
   },
 ];
@@ -101,17 +112,25 @@ export default function ServicesPage() {
                 <p className="sr-only">TODO: {service.todo}</p>
               ) : null}
             </div>
-            <div
-              className="aspect-[4/3] rounded-[var(--radius-md)] bg-[color-mix(in_srgb,var(--color-bg-dark)_8%,var(--color-bg))] border border-[var(--color-border)] grid place-items-center"
-              aria-hidden
-            >
-              <span
-                className="font-serif text-[var(--color-ink-subtle)]"
-                style={{ fontSize: "3rem", letterSpacing: "0.02em" }}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)]">
+              {/* TODO: swap for client-supplied facility photo when delivered. Placeholder sourced from design/prototypes.pen (see public/images/CREDITS.md). */}
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute left-3 bottom-3 rounded-[var(--radius-sm)] bg-[rgba(255,255,255,0.85)] backdrop-blur px-2.5 py-1.5"
               >
-                {service.title.replace(/&amp;/g, "&").charAt(0)}
-              </span>
-              {/* TODO: replace with facility photo once client delivers */}
+                <p
+                  className="text-[10px] font-medium text-[var(--color-ink)]"
+                  style={{ letterSpacing: "0.2em" }}
+                >
+                  {service.imageFig}
+                </p>
+              </div>
             </div>
           </section>
         ))}

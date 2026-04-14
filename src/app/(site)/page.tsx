@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getSiteConfig } from "@/lib/site-config";
 import { getStrainRepository } from "@/lib/strains/repository";
@@ -35,12 +36,29 @@ function HeroSection({
       className="relative isolate overflow-hidden"
       style={{ minHeight: "min(84vh, 780px)" }}
     >
+      {/* TODO: swap for client-supplied facility photo when delivered. Placeholder sourced from design/prototypes.pen (see public/images/CREDITS.md). */}
+      <Image
+        src="/images/home/hero-desktop.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover -z-20 hidden sm:block"
+      />
+      <Image
+        src="/images/home/hero-mobile.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover -z-20 sm:hidden"
+      />
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 120% 80% at 30% 20%, color-mix(in srgb, var(--color-primary) 45%, var(--color-bg-dark)) 0%, var(--color-bg-dark) 70%)",
+            "linear-gradient(100deg, color-mix(in srgb, var(--color-bg-dark) 82%, transparent) 0%, color-mix(in srgb, var(--color-bg-dark) 55%, transparent) 55%, color-mix(in srgb, var(--color-bg-dark) 25%, transparent) 100%)",
         }}
       />
       <div
@@ -48,7 +66,7 @@ function HeroSection({
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(180deg, rgba(27,58,40,0) 0%, rgba(27,58,40,0.55) 100%)",
+            "linear-gradient(180deg, rgba(27,58,40,0) 40%, rgba(27,58,40,0.6) 100%)",
         }}
       />
 
@@ -173,8 +191,16 @@ function FeaturedStrains({ strains }: { strains: Strain[] }) {
 
 function WholesaleCtaBanner() {
   return (
-    <section aria-label="Wholesale CTA" className="surface-dark">
-      <div className="container-site py-20 lg:py-24">
+    <section aria-label="Wholesale CTA" className="surface-dark relative overflow-hidden">
+      {/* TODO: swap for client-supplied facility photo when delivered. Placeholder sourced from design/prototypes.pen (see public/images/CREDITS.md). */}
+      <Image
+        src="/images/home/wholesale-cta.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-25"
+      />
+      <div className="relative container-site py-20 lg:py-24">
         <ScrollReveal>
           <div className="max-w-3xl">
             <p
