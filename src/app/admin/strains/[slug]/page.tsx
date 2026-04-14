@@ -12,7 +12,9 @@ export default async function AdminStrainEditPage({
 }) {
   const { slug } = await params;
   await requireRole(["admin"], `/admin/strains/${slug}`);
-  const strain = await getStrainRepository().getStrainBySlug(slug);
+  const strain = await getStrainRepository().getStrainBySlug(slug, {
+    includeDrafts: true,
+  });
   if (!strain) notFound();
 
   return (

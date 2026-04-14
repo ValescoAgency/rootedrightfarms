@@ -26,7 +26,18 @@ export const strainAdminSchema = z.object({
   lineage: z.string().trim().max(200).nullable(),
   flavors: z.array(z.string().trim().min(1).max(40)).max(CHIP_MAX),
   effects: z.array(z.string().trim().min(1).max(40)).max(CHIP_MAX),
-  heroImageUrl: z.string().url().max(1000).nullable(),
+  heroImageUrl: z
+    .string()
+    .trim()
+    .max(1000)
+    .refine(
+      (v) => v.startsWith("/") || /^https?:\/\//i.test(v),
+      {
+        message:
+          "Must be a full URL (https://…) or a site-relative path (/images/…)",
+      },
+    )
+    .nullable(),
   isPublished: z.boolean(),
 });
 

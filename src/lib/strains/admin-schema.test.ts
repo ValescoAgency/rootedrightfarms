@@ -37,6 +37,26 @@ describe("strainAdminSchema", () => {
     const bad = { ...valid, flavors: manyFlavors };
     expect(strainAdminSchema.safeParse(bad).success).toBe(false);
   });
+
+  it("accepts a site-relative hero image path", () => {
+    const ok = { ...valid, heroImageUrl: "/images/strains/pie-hoe.jpg" };
+    expect(strainAdminSchema.safeParse(ok).success).toBe(true);
+  });
+
+  it("accepts an https hero image URL", () => {
+    const ok = { ...valid, heroImageUrl: "https://cdn.example.com/x.jpg" };
+    expect(strainAdminSchema.safeParse(ok).success).toBe(true);
+  });
+
+  it("rejects a hero image value that is neither URL nor relative path", () => {
+    const bad = { ...valid, heroImageUrl: "not-a-url-or-path.jpg" };
+    expect(strainAdminSchema.safeParse(bad).success).toBe(false);
+  });
+
+  it("accepts null hero image", () => {
+    const ok = { ...valid, heroImageUrl: null };
+    expect(strainAdminSchema.safeParse(ok).success).toBe(true);
+  });
 });
 
 describe("parseStrainFormData", () => {

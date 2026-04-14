@@ -7,16 +7,16 @@ import {
   parseStrainFormData,
   strainAdminSchema,
 } from "@/lib/strains/admin-schema";
+import { getStrainRepository } from "@/lib/strains/repository";
 import type { Envelope } from "@/lib/submissions/types";
 
 export type StrainSaveResult = Envelope<{ slug: string }>;
 
 /**
- * Save (create or update) a strain. Uses requireRole on every invocation so
- * even a direct POST to the action endpoint is gated. Once the
- * Supabase-backed StrainRepository lands this function will call it; for
- * now it validates + revalidates paths, returning a clear shape that the
- * editor can render.
+ * Save (create or update) a strain. Gated by requireRole so a direct POST
+ * to the action endpoint still goes through RBAC. The Supabase repository
+ * enforces admin-only writes via the update_strains_admin /
+ * insert_strains_admin policies (see migration 20260414000010).
  */
 export async function saveStrainAction(
   _prev: StrainSaveResult | null,
@@ -34,24 +34,50 @@ export async function saveStrainAction(
     }
     return {
       data: null,
-      error: { code: "invalid_input", message: "Please fix the fields.", fields },
+      error: {
+        code: "invalid_input",
+        message: "Please fix the fields.",
+        fields,
+      },
     };
   }
 
-  // TODO(va-42-supabase): persist via Supabase repository once service-role
-  // env + CRUD methods are wired. For now we revalidate and return success
-  // so the editor flow can be exercised in preview.
+  const originalSlugRaw = formData.get("originalSlug")?.toString();
+  const originalSlug =
+    originalSlugRaw && originalSlugRaw.trim().length > 0
+      ? originalSlugRaw.trim()
+      : undefined;
+
+  try {
+    const repo = getStrainRepository();
+    await repo.saveStrain(parsed.data, { originalSlug });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return {
+      data: null,
+      error: { code: "save_failed", message },
+    };
+  }
+
   revalidatePath("/strains");
   revalidatePath(`/strains/${parsed.data.slug}`);
+  if (originalSlug && originalSlug !== parsed.data.slug) {
+    revalidatePath(`/strains/${originalSlug}`);
+  }
   revalidatePath("/admin/strains");
+  revalidatePath(`/admin/strains/${parsed.data.slug}`);
 
   return { data: { slug: parsed.data.slug }, error: null };
 }
 
-export async function deleteStrainAction(_formData: FormData) {
+export async function deleteStrainAction(formData: FormData) {
   await requireRole(["admin"], "/admin/strains");
-  // TODO(va-42-supabase): read slug from _formData and delete once the
-  // Supabase-backed repo has a delete method.
+  const slug = formData.get("slug")?.toString();
+  if (slug) {
+    const repo = getStrainRepository();
+    await repo.deleteStrain(slug);
+    revalidatePath(`/strains/${slug}`);
+  }
   revalidatePath("/strains");
   revalidatePath("/admin/strains");
   redirect("/admin/strains");

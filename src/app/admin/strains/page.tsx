@@ -7,9 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function AdminStrainsPage() {
   await requireRole(["admin"], "/admin/strains");
   const repo = getStrainRepository();
-  // Admin view: we'd normally pull drafts too once the Supabase-backed
-  // repo lands. In-memory impl only surfaces published rows.
-  const strains = await repo.listStrains();
+  const strains = await repo.listStrains({ includeDrafts: true });
 
   return (
     <section className="container-site py-10 lg:py-14">
