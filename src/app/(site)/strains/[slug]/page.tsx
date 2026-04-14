@@ -5,6 +5,12 @@ import { StrainCard } from "@/components/strains/strain-card";
 import { StrainImageZoom } from "@/components/strains/strain-image-zoom";
 import type { StrainType } from "@/lib/strains/types";
 
+// ISR: refresh the pre-rendered detail pages once an hour. Admin edits
+// already fire `revalidatePath` for immediate propagation (see
+// src/app/admin/strains/actions.ts); this TTL guards against direct-SQL
+// drift (e.g. ad-hoc data migrations run in the Supabase dashboard).
+export const revalidate = 3600;
+
 const TYPE_LABEL: Record<StrainType, string> = {
   indica: "INDICA",
   sativa: "SATIVA",

@@ -35,9 +35,21 @@ pnpm test:watch                        # Vitest watch
 pnpm test -- src/path/to/file.test.ts  # Single test file
 pnpm test:e2e                          # Playwright (spawns `pnpm dev` unless CI)
 pnpm format                            # Prettier write
+pnpm db:push                           # supabase db push (apply migrations to linked project)
+pnpm db:status                         # supabase migration list --linked
+pnpm db:diff                           # supabase db diff --linked (local vs remote)
 ```
 
-Local Supabase runs on non-default ports (see `supabase/config.toml`): API `54421`, DB `54422`. Run `supabase start` from the repo root; copy the printed anon/service keys into `.env.local`.
+Local Supabase runs on non-default ports (see `supabase/config.toml`): API `54421`, DB `54422`. Run `pnpm exec supabase start` from the repo root; copy the printed anon/service keys into `.env.local`.
+
+The Supabase CLI is vendored as a dev dependency (`supabase` in `devDependencies`). For `db:push` / `db:status` / `db:diff` against the hosted project, first authenticate:
+
+```bash
+pnpm exec supabase login                         # interactive (browser), once per machine
+# — or —
+export SUPABASE_ACCESS_TOKEN=sbp_...             # personal access token, headless/CI
+pnpm exec supabase link --project-ref <ref>      # one-time per checkout
+```
 
 ## Repository Layout
 
