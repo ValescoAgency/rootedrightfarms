@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getStrainRepository } from "@/lib/strains/repository";
 import { STRAIN_TYPES, type StrainType } from "@/lib/strains/types";
@@ -69,8 +70,15 @@ export default async function StrainsPage({
         )}
       </section>
 
-      <section className="surface-dark">
-        <div className="container-site py-16 lg:py-20 text-center lg:text-left lg:flex lg:items-center lg:justify-between lg:gap-12">
+      <section className="surface-dark relative overflow-hidden">
+        <Image
+          src="/images/wholesale/banner-desktop.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
+        <div className="relative container-site py-16 lg:py-20 text-center lg:text-left lg:flex lg:items-center lg:justify-between lg:gap-12">
           <div className="max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-0">
             <h2 className="font-serif text-3xl lg:text-4xl mb-3">
               Interested in wholesale?

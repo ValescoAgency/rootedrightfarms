@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { primaryNav } from "@/lib/nav";
 
@@ -10,8 +11,17 @@ export function TopNav() {
       <div className="container-site flex items-center justify-between h-16">
         <Link
           href="/"
-          className="font-serif text-xl font-semibold tracking-tight text-[var(--color-ink)]"
+          aria-label="Rooted Right Farms — home"
+          className="flex items-center gap-3 font-serif text-xl font-semibold tracking-tight text-[var(--color-ink)]"
         >
+          <Image
+            src="/images/logo.png"
+            alt=""
+            width={36}
+            height={36}
+            priority
+            className="h-9 w-9"
+          />
           Rooted Right Farms
         </Link>
         <ul className="flex items-center gap-8">
