@@ -15,7 +15,7 @@ Design decisions locked during plan-design-review (commit a75f704). Any change r
 --color-bg-dark      #1B3A28   deep forest, inverse surface (strain section, footer)
 --color-ink          #1B3A28   primary text on light bg
 --color-ink-muted    #4A6B52   secondary text (body copy)
---color-ink-subtle   #808A80   tertiary text (captions, FIG. labels)
+--color-ink-subtle   #6B776B   tertiary text (captions, FIG. labels) — darkened from #808A80 during VA-45 a11y audit so text-xs hits WCAG AA 4.5:1
 --color-ink-inverse  #FFFFFF   text on dark bg
 --color-ink-inv-mut  #D6DDD0   muted text on dark bg
 --color-primary      #2D5E3A   primary brand green (CTAs, nav on dark variants)

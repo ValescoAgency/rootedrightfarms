@@ -1,26 +1,177 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Rooted Right Farms design tokens
+ * Source of truth: /DESIGN.md — any change must also update that file.
+ */
+
+@theme {
+  /* Colors */
+  --color-bg: #fafaf7;
+  --color-bg-dark: #1b3a28;
+  --color-ink: #1b3a28;
+  --color-ink-muted: #4a6b52;
+  --color-ink-subtle: #6b776b;
+  --color-ink-inverse: #ffffff;
+  --color-ink-inv-muted: #d6ddd0;
+  --color-primary: #2d5e3a;
+  --color-accent: #da724f;
+  --color-border: #d6ddd0;
+  --color-border-inv: rgba(255, 255, 255, 0.2);
+  --color-success: #2d6b3f;
+  --color-error: #b54a2f;
+  --color-focus: #da724f;
+
+  /* Typography */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 2.625rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4rem;
+
+  /* Radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-instant: 120ms;
+  --duration-quick: 240ms;
+  --duration-editorial: 480ms;
+
+  /* Layout */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1440px;
+  --container-max: 1440px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  line-height: 1.08;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Dark inverse surface utility */
+.surface-dark {
+  background: var(--color-bg-dark);
+  color: var(--color-ink-inverse);
+}
+
+.surface-dark :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-ink-inverse);
+}
+
+/* Container */
+.container-site {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 640px) {
+  .container-site {
+    padding-inline: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-site {
+    padding-inline: 80px;
+  }
+}
+
+/* FIG. label + eyebrow tracking */
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-ink-subtle);
+}
+
+/* Focus ring (global) */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 16px;
+  background: var(--color-bg-dark);
+  color: var(--color-ink-inverse);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  z-index: 100;
+  transition: top 120ms var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 240ms !important;
+    transition-property: opacity, color, background-color, border-color !important;
+  }
 }
