@@ -4,6 +4,7 @@ import { getStrainRepository } from "@/lib/strains/repository";
 import type { Strain } from "@/lib/strains/types";
 import { StrainCard } from "@/components/strains/strain-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { InstagramGrid } from "@/components/instagram-grid";
 
 export default async function HomePage() {
   const { hero } = getSiteConfig();
@@ -15,7 +16,7 @@ export default async function HomePage() {
       <HeroSection tagline={hero.tagline} subtitle={hero.subtitle} />
       <StatsBar />
       <FeaturedStrains strains={featured} />
-      <InstagramPlaceholder />
+      <InstagramGrid />
       <WholesaleCtaBanner />
     </>
   );
@@ -166,51 +167,6 @@ function FeaturedStrains({ strains }: { strains: Strain[] }) {
           </li>
         ))}
       </ul>
-    </section>
-  );
-}
-
-function InstagramPlaceholder() {
-  const cells = Array.from({ length: 6 }, (_, i) => i);
-  return (
-    <section
-      aria-label="From Instagram"
-      className="border-t border-[var(--color-border)]"
-    >
-      <div className="container-site py-16 lg:py-24">
-        <ScrollReveal>
-          <div className="flex items-end justify-between mb-8">
-            <div>
-              <p className="eyebrow mb-3">FIG. 003 — ON INSTAGRAM</p>
-              <h2 className="font-serif text-3xl lg:text-4xl">
-                From the farm, lately.
-              </h2>
-            </div>
-            <a
-              href="https://www.instagram.com/rootedrightfarms"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
-            >
-              @rootedrightfarms →
-            </a>
-          </div>
-        </ScrollReveal>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-3">
-          {cells.map((i) => (
-            <li key={i}>
-              <ScrollReveal delayIndex={i}>
-                <div
-                  className="aspect-square rounded-[var(--radius-sm)] bg-[color-mix(in_srgb,var(--color-bg-dark)_10%,var(--color-bg))] border border-[var(--color-border)] grid place-items-center"
-                  aria-hidden
-                >
-                  <span className="eyebrow">LOADING FEED</span>
-                </div>
-              </ScrollReveal>
-            </li>
-          ))}
-        </ul>
-      </div>
     </section>
   );
 }
