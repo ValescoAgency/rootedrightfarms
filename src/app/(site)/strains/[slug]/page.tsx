@@ -113,7 +113,7 @@ export default async function StrainDetailPage({
         </div>
       </section>
 
-      <section className="surface-dark">
+      <section className="border-y border-[var(--color-border)]">
         <div className="container-site py-10 lg:py-14">
           <dl
             className="grid grid-cols-3 gap-6 lg:flex lg:justify-around lg:gap-16 text-center lg:text-left"
@@ -141,7 +141,7 @@ export default async function StrainDetailPage({
         <section className="container-site pb-16 lg:pb-24 border-t border-[var(--color-border)] pt-16 lg:pt-24">
           <div className="flex items-end justify-between mb-8 lg:mb-10">
             <div>
-              <p className="eyebrow mb-2">FIG. 007 — RELATED</p>
+              <p className="eyebrow mb-2">RELATED CULTIVARS</p>
               <h2 className="font-serif text-3xl lg:text-4xl">
                 More from the catalog.
               </h2>
@@ -167,7 +167,7 @@ export default async function StrainDetailPage({
         <div className="container-site py-16 lg:py-20 text-center lg:text-left lg:flex lg:items-center lg:justify-between lg:gap-12">
           <div className="max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-0">
             <h2 className="font-serif text-3xl lg:text-4xl mb-3">
-              Wholesale {strain.name}.
+              Carry {strain.name}
             </h2>
             <p style={{ color: "var(--color-ink-inv-muted)" }}>
               Licensed Oklahoma dispensaries — reach out and we&rsquo;ll
@@ -195,10 +195,7 @@ function Stat({ label, value }: { label: string; value: string }) {
       >
         {value}
       </dd>
-      <dt
-        className="eyebrow"
-        style={{ color: "var(--color-ink-inv-muted)" }}
-      >
+      <dt className="eyebrow">
         {label}
       </dt>
     </div>
