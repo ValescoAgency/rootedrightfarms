@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 
 // Guard against regressions where we ship a broken `/images/...` path or an
 // image that fails to decode. Instagram thumbnails are intentionally skipped
@@ -53,6 +53,26 @@ async function gotoWithoutAgeGate(
 }
 
 /**
+ * Snapshot every matching <img>'s load state — used to attach rich failure
+ * context when a wait times out, so the CI log tells us exactly which `src`
+ * didn't decode instead of just "timeout".
+ */
+async function snapshotImageStates(
+  page: import("@playwright/test").Page,
+  selector: string,
+): Promise<Array<{ src: string; complete: boolean; naturalWidth: number }>> {
+  return page.evaluate((sel) => {
+    return Array.from(document.querySelectorAll<HTMLImageElement>(sel)).map(
+      (img) => ({
+        src: img.currentSrc || img.src,
+        complete: img.complete,
+        naturalWidth: img.naturalWidth,
+      }),
+    );
+  }, selector);
+}
+
+/**
  * Resolves when every <img> matching the selector has finished loading
  * (`naturalWidth > 0`). Uses `naturalWidth` rather than layout metrics so the
  * check survives responsive variants that are `display: none` at the current
@@ -63,29 +83,49 @@ async function waitForAllImagesLoaded(
   page: import("@playwright/test").Page,
   selector: string,
 ) {
-  await page.waitForFunction(
-    (sel) => {
-      const imgs = Array.from(document.querySelectorAll<HTMLImageElement>(sel));
-      if (imgs.length === 0) return false;
-      return imgs.every((img) => img.complete && img.naturalWidth > 0);
-    },
-    selector,
-    { timeout: IMG_WAIT },
-  );
+  try {
+    await page.waitForFunction(
+      (sel) => {
+        const imgs = Array.from(
+          document.querySelectorAll<HTMLImageElement>(sel),
+        );
+        if (imgs.length === 0) return false;
+        return imgs.every((img) => img.complete && img.naturalWidth > 0);
+      },
+      selector,
+      { timeout: IMG_WAIT },
+    );
+  } catch (err) {
+    const states = await snapshotImageStates(page, selector);
+    throw new Error(
+      `waitForAllImagesLoaded(${JSON.stringify(selector)}) timed out. ` +
+        `imgs=${JSON.stringify(states)}. cause=${(err as Error).message}`,
+    );
+  }
 }
 
 async function waitForAnyImageLoaded(
   page: import("@playwright/test").Page,
   selector: string,
 ) {
-  await page.waitForFunction(
-    (sel) => {
-      const imgs = Array.from(document.querySelectorAll<HTMLImageElement>(sel));
-      return imgs.some((img) => img.complete && img.naturalWidth > 0);
-    },
-    selector,
-    { timeout: IMG_WAIT },
-  );
+  try {
+    await page.waitForFunction(
+      (sel) => {
+        const imgs = Array.from(
+          document.querySelectorAll<HTMLImageElement>(sel),
+        );
+        return imgs.some((img) => img.complete && img.naturalWidth > 0);
+      },
+      selector,
+      { timeout: IMG_WAIT },
+    );
+  } catch (err) {
+    const states = await snapshotImageStates(page, selector);
+    throw new Error(
+      `waitForAnyImageLoaded(${JSON.stringify(selector)}) timed out. ` +
+        `imgs=${JSON.stringify(states)}. cause=${(err as Error).message}`,
+    );
+  }
 }
 
 test("home page hero renders + any visible strain cards have images", async ({
@@ -97,17 +137,18 @@ test("home page hero renders + any visible strain cards have images", async ({
   // must load.
   await waitForAnyImageLoaded(page, 'section[aria-label="Hero"] img');
 
-  // Strain cards are opportunistic: if the repo returns zero strains (e.g.
-  // Supabase configured but empty), the catalog section still renders the
-  // heading but no cards. In that case there's nothing image-related to check.
-  const strainImgs = page.locator(
-    'section[aria-label="Featured strains"] ul li img',
+  // Strain cards: we only assert on images we own (seeded `/images/strains/…`
+  // paths). Supabase may publish extra strains whose `heroImageUrl` points at
+  // Storage or an external URL — we don't own those paths, so a failure
+  // there isn't a regression in *this* PR. Keep the assertion scoped.
+  const ownedStrainImgs = page.locator(
+    'section[aria-label="Featured strains"] ul li img[src^="/images/"]',
   );
-  const count = await strainImgs.count();
+  const count = await ownedStrainImgs.count();
   if (count > 0) {
     await waitForAllImagesLoaded(
       page,
-      'section[aria-label="Featured strains"] ul li img',
+      'section[aria-label="Featured strains"] ul li img[src^="/images/"]',
     );
   }
 });
@@ -124,10 +165,11 @@ test("strains catalog page hero renders + any visible cards have images", async 
     'img[src*="strains-hero"], img[srcset*="strains-hero"]',
   );
 
-  const cardImgs = page.locator("ul li img");
-  const count = await cardImgs.count();
+  // Same scoping as the home page: only assert on images we own.
+  const ownedCardImgs = page.locator('ul li img[src^="/images/"]');
+  const count = await ownedCardImgs.count();
   if (count > 0) {
-    await waitForAllImagesLoaded(page, "ul li img");
+    await waitForAllImagesLoaded(page, 'ul li img[src^="/images/"]');
   }
 });
 
