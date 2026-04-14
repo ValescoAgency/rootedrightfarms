@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState, useState } from "react";
 import {
   INQUIRY_TYPES,
@@ -228,12 +229,12 @@ function ThanksOverlay() {
         We&rsquo;ll reply within one business day. In the meantime, check out
         our strains.
       </p>
-      <a
+      <Link
         href="/strains"
         className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full border-[1.5px] border-[var(--color-ink-inverse)] text-[var(--color-ink-inverse)] font-medium text-sm transition-colors duration-[var(--duration-quick)] hover:bg-[var(--color-ink-inverse)] hover:text-[var(--color-ink)]"
       >
         Explore Our Strains
-      </a>
+      </Link>
     </div>
   );
 }
