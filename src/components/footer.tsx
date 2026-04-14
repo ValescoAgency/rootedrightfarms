@@ -22,7 +22,7 @@ export function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Footer">
+        <nav aria-label="Footer" className="space-y-3">
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {primaryNav.map((item) => (
               <li key={item.href}>
@@ -34,6 +34,24 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+          </ul>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <li>
+              <Link
+                href="/privacy"
+                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/terms"
+                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                Terms
+              </Link>
+            </li>
           </ul>
         </nav>
 
