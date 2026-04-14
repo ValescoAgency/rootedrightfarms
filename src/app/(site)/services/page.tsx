@@ -24,7 +24,7 @@ interface Service {
 // "Grower Consultation" was dropped. Tissue Cultures remains standalone.
 const services: Service[] = [
   {
-    eyebrow: "SERVICE · 001",
+    eyebrow: "NURSERY & DESIGN",
     title: "Nursery &amp; Design",
     description:
       "Clones and plantlets from our mothers, plus facility design advisory for operators building out new rooms. One engagement that covers both the genetics pipeline and the room you grow them in.",
@@ -36,11 +36,11 @@ const services: Service[] = [
     inquiry: "nursery-design",
     image: "/images/services/nursery-design.png",
     imageAlt: "Cultivator inspecting flower in a Rooted Right Farms grow room",
-    imageFig: "FIG. 005.A — CANOPY INSPECTION",
+    imageFig: "Canopy inspection",
     todo: "Jeff approval — copy is Jason-drafted from merged Nursery + Design offering",
   },
   {
-    eyebrow: "SERVICE · 002",
+    eyebrow: "TISSUE CULTURES",
     title: "Tissue Cultures",
     description:
       "Clean-stock tissue culture services for cultivars you want to preserve or scale. Meristem work in a dedicated lab space with documented provenance.",
@@ -53,7 +53,7 @@ const services: Service[] = [
     image: "/images/services/tissue-cultures.png",
     imageAlt:
       "Lab technician examining a hydroponic root system at Rooted Right Farms",
-    imageFig: "FIG. 005.B — HYDROPONIC ROOT SYSTEM",
+    imageFig: "Hydroponic root system",
     todo: "Jeff approval — tissue culture capability + pricing",
   },
 ];
@@ -62,7 +62,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="container-site py-16 lg:py-24">
-        <p className="eyebrow mb-4">FIG. 005 — SERVICES</p>
+        <p className="eyebrow mb-4">SERVICES</p>
         <h1 className="font-serif text-4xl lg:text-6xl max-w-3xl leading-[1.08] mb-8">
           For Oklahoma cultivators who need a partner upstream.
         </h1>
@@ -121,16 +121,7 @@ export default function ServicesPage() {
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
               />
-              <div
-                className="absolute left-3 bottom-3 rounded-[var(--radius-sm)] bg-[rgba(255,255,255,0.85)] backdrop-blur px-2.5 py-1.5"
-              >
-                <p
-                  className="text-[10px] font-medium text-[var(--color-ink)]"
-                  style={{ letterSpacing: "0.2em" }}
-                >
-                  {service.imageFig}
-                </p>
-              </div>
+              <span className="sr-only">{service.imageFig}</span>
             </div>
           </section>
         ))}
