@@ -15,7 +15,7 @@ test.describe("age gate", () => {
     page,
   }) => {
     await page.goto("/strains");
-    await page.getByRole("button", { name: /yes, i'm 21/i }).click();
+    await page.getByRole("button", { name: /yes, i.m 21/i }).click();
     await expect(page).toHaveURL(/\/strains$/);
 
     await page.reload();
@@ -25,7 +25,7 @@ test.describe("age gate", () => {
 
   test("denying age sends the user to /age-blocked", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("button", { name: /no, i'm under 21/i }).click();
+    await page.getByRole("button", { name: /no, i.m under 21/i }).click();
     await expect(page).toHaveURL(/\/age-blocked$/);
   });
 });
