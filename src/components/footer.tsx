@@ -107,6 +107,33 @@ export function Footer() {
             ))}
           </ul>
         </div>
+
+        <div className="pt-6 border-t border-[var(--color-border)] text-center">
+          <p className="inline-flex items-center gap-1.5 text-xs text-[var(--color-ink-subtle)]">
+            Built with{" "}
+            <span className="text-[var(--color-accent)]" aria-hidden="true">
+              ♥
+            </span>{" "}
+            by{" "}
+            <a
+              href="https://valescoagency.com/?utm_source=rootedrightfarms&utm_medium=website&utm_campaign=customers&utm_content=footer"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-1 transition-opacity hover:opacity-80"
+              style={{ color: "oklch(0.717 0.0901 64.99)" }}
+            >
+              <svg
+                aria-hidden="true"
+                className="size-4 fill-current"
+                viewBox="0 0 198 186"
+              >
+                <path d="M66.11 185.65L0 70.81H71.55L66.11 80.27H16.38L66.11 166.67L119.93 73.18H130.86L66.11 185.65Z" />
+                <path d="M131.25 0L197.36 114.84H125.81L131.25 105.38H180.99L131.25 18.98L77.43 112.48H66.5L131.25 0Z" />
+              </svg>
+              <span>Valesco Agency</span>
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
