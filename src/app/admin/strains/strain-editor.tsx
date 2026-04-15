@@ -9,6 +9,8 @@ import {
   deleteStrainAction,
   type StrainSaveResult,
 } from "./actions";
+import { TiptapEditor } from "./tiptap-editor";
+import { ImageUpload } from "./image-upload";
 
 interface Props {
   mode: "create" | "edit";
@@ -116,11 +118,10 @@ export function StrainEditor({ mode, strain }: Props) {
         </Field>
 
         <Field label="Description" name="description" error={errors.description}>
-          <textarea
+          <TiptapEditor
             name="description"
-            rows={4}
-            defaultValue={strain?.description ?? ""}
-            className={`${fieldClass} resize-y min-h-[120px]`}
+            defaultValue={strain?.description}
+            error={errors.description}
           />
         </Field>
 
@@ -149,16 +150,14 @@ export function StrainEditor({ mode, strain }: Props) {
         </Field>
 
         <Field
-          label="Hero image URL"
+          label="Hero image"
           name="heroImageUrl"
           error={errors.heroImageUrl}
         >
-          <input
+          <ImageUpload
             name="heroImageUrl"
-            type="url"
-            defaultValue={strain?.heroImageUrl ?? ""}
-            placeholder="https://…/pie-hoe.jpg"
-            className={fieldClass}
+            defaultValue={strain?.heroImageUrl}
+            error={errors.heroImageUrl}
           />
         </Field>
 
