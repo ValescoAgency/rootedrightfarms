@@ -56,6 +56,8 @@ export default async function StrainsPage({
             </Link>
           </div>
         ) : (
+          <>
+          <h2 className="sr-only">Browse cultivars</h2>
           <ul
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             aria-label={`${strains.length} strain${strains.length === 1 ? "" : "s"}`}
@@ -66,6 +68,7 @@ export default async function StrainsPage({
               </li>
             ))}
           </ul>
+          </>
         )}
       </section>
 

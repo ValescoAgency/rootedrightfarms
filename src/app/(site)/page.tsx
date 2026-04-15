@@ -169,7 +169,7 @@ function FeaturedStrains({ strains }: { strains: Strain[] }) {
         <ScrollReveal delayIndex={1}>
           <Link
             href="/strains"
-            className="self-start text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+            className="self-start text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors py-2 inline-flex items-center"
           >
             See all strains →
           </Link>

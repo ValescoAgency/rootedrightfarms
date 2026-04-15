@@ -50,8 +50,8 @@ describe("public image assets", () => {
     expect(paths).toContain("/images/about/hero-desktop.jpg");
     expect(paths).toContain("/images/services/nursery-design.png");
     expect(paths).toContain("/images/services/tissue-cultures.png");
-    expect(paths).toContain("/images/contact/dispensary-shelf.png");
-    expect(paths).toContain("/images/strains-hero/grow-room.png");
+    // dispensary-shelf.png is in public/ but not yet referenced in source — remove when wired up
+    // grow-room.png is in public/ but strains hero was removed in VA-63 — remove when re-wired
     expect(paths).toContain("/images/employment/team.png");
     expect(paths).toContain("/images/strains/pie-hoe.jpg");
     expect(paths).toContain("/images/strains/banana-candy.jpg");

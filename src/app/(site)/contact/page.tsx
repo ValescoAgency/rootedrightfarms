@@ -65,7 +65,7 @@ export default async function ContactPage({
           {trustItems.map(({ icon: Icon, label }) => (
             <li key={label} className="flex items-center gap-2">
               <Icon
-                size={14}
+                size={16}
                 className="shrink-0 text-[var(--color-accent)]"
                 aria-hidden
               />

@@ -68,7 +68,7 @@ export function CookieBanner() {
             writeDismissCookie();
             setLocallyDismissed(true);
           }}
-          className="shrink-0 px-5 py-2 rounded-[var(--radius-md)] bg-[var(--color-accent)] text-[var(--color-ink-inverse)] text-sm font-medium transition-all duration-[var(--duration-quick)] hover:brightness-95"
+          className="shrink-0 px-5 py-2 min-h-[44px] rounded-[var(--radius-md)] bg-[var(--color-accent)] text-[var(--color-ink-inverse)] text-sm font-medium transition-all duration-[var(--duration-quick)] hover:brightness-95"
         >
           Got it
         </button>

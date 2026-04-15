@@ -51,7 +51,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+                  className="text-sm text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
                 >
                   {item.label}
                 </Link>
@@ -62,7 +62,7 @@ export function Footer() {
             <li>
               <Link
                 href="/privacy"
-                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors"
+                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
               >
                 Privacy
               </Link>
@@ -70,7 +70,7 @@ export function Footer() {
             <li>
               <Link
                 href="/terms"
-                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors"
+                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
               >
                 Terms
               </Link>
@@ -85,7 +85,7 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+                  className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
                 >
                   {s.label}
                 </a>
