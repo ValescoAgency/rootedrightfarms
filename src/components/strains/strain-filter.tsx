@@ -33,7 +33,7 @@ export function StrainFilter({ current }: Props) {
             href={href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "px-4 py-2 rounded-full border-[1.5px] text-sm font-medium transition-colors duration-[var(--duration-quick)]",
+              "px-4 py-2 min-h-[44px] inline-flex items-center rounded-full border-[1.5px] text-sm font-medium transition-colors duration-[var(--duration-quick)]",
               active
                 ? "bg-[var(--color-accent)] border-[var(--color-accent)] text-[var(--color-ink-inverse)]"
                 : "border-[var(--color-border)] text-[var(--color-ink)] hover:border-[var(--color-ink)]",
