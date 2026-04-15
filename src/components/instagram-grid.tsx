@@ -23,7 +23,7 @@ export async function InstagramGrid() {
         <ScrollReveal>
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="eyebrow mb-3">FIG. 003 — ON INSTAGRAM</p>
+              <p className="eyebrow mb-3">ON INSTAGRAM</p>
               <h2 className="font-serif text-3xl lg:text-4xl">
                 From the farm, lately.
               </h2>
