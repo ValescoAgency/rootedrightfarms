@@ -14,10 +14,11 @@ import {
   Heading3,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
+import type { TiptapDoc } from "@/lib/strains/types";
 
 interface TiptapEditorProps {
   name: string;
-  defaultValue?: string | null;
+  defaultValue?: TiptapDoc | null;
   error?: string;
 }
 
@@ -34,7 +35,7 @@ export function TiptapEditor({ name, defaultValue, error }: TiptapEditorProps) {
     content: defaultValue ?? "",
     onUpdate: ({ editor }) => {
       if (inputRef.current) {
-        inputRef.current.value = editor.isEmpty ? "" : editor.getHTML();
+        inputRef.current.value = editor.isEmpty ? "" : JSON.stringify(editor.getJSON());
       }
     },
     editorProps: {
@@ -50,7 +51,7 @@ export function TiptapEditor({ name, defaultValue, error }: TiptapEditorProps) {
   // user submits without making any changes.
   useEffect(() => {
     if (inputRef.current && editor) {
-      inputRef.current.value = editor.isEmpty ? "" : editor.getHTML();
+      inputRef.current.value = editor.isEmpty ? "" : JSON.stringify(editor.getJSON());
     }
   }, [editor]);
 
@@ -60,7 +61,7 @@ export function TiptapEditor({ name, defaultValue, error }: TiptapEditorProps) {
         ref={inputRef}
         type="hidden"
         name={name}
-        defaultValue={defaultValue ?? ""}
+        defaultValue={defaultValue ? JSON.stringify(defaultValue) : ""}
       />
       <div
         className={[

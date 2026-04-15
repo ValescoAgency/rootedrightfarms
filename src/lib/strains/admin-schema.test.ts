@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { strainAdminSchema, parseStrainFormData, slugify } from "./admin-schema";
+import type { TiptapDoc } from "./types";
+
+const validDescription: TiptapDoc = {
+  type: "doc",
+  content: [{ type: "paragraph", content: [{ type: "text", text: "A flagship." }] }],
+};
 
 describe("strainAdminSchema", () => {
   const valid = {
@@ -8,7 +14,7 @@ describe("strainAdminSchema", () => {
     type: "hybrid" as const,
     thcPct: 26.4,
     cbdPct: 0.1,
-    description: "A flagship.",
+    description: validDescription,
     lineage: "Grape Pie × Tahoe OG",
     flavors: ["cherry", "earth"],
     effects: ["relaxed"],
@@ -67,7 +73,7 @@ describe("parseStrainFormData", () => {
     fd.set("type", "hybrid");
     fd.set("thcPct", "26.4");
     fd.set("cbdPct", "");
-    fd.set("description", "A flagship.");
+    fd.set("description", JSON.stringify(validDescription));
     fd.set("lineage", "Grape Pie × Tahoe OG");
     fd.set("flavors", "Cherry, Earth, , cherry");
     fd.set("effects", "relaxed");

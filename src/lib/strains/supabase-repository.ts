@@ -1,7 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { createSupabaseAnonClient } from "@/lib/supabase/anon";
-import type { Strain, StrainType } from "./types";
+import type { Strain, StrainType, TiptapDoc } from "./types";
 import type { StrainAdminInput } from "./admin-schema";
 import type {
   GetStrainOptions,
@@ -16,7 +16,7 @@ interface StrainRow {
   type: StrainType;
   thc_pct: number | null;
   cbd_pct: number | null;
-  description: string | null;
+  description: unknown;
   lineage: string | null;
   flavors: string[] | null;
   effects: string[] | null;
@@ -27,6 +27,21 @@ interface StrainRow {
   updated_at: string;
 }
 
+/**
+ * Runtime guard: the description column is migrated from text → jsonb.
+ * Until the migration is applied, the DB may return a string (old HTML) or
+ * a malformed value. Treat anything that isn't a well-formed TipTap doc as
+ * null so the page renders without crashing.
+ */
+function isTiptapDoc(value: unknown): value is TiptapDoc {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    (value as TiptapDoc).type === "doc" &&
+    Array.isArray((value as TiptapDoc).content)
+  );
+}
+
 function rowToStrain(row: StrainRow): Strain {
   return {
     id: row.id,
@@ -35,7 +50,7 @@ function rowToStrain(row: StrainRow): Strain {
     type: row.type,
     thcPct: row.thc_pct,
     cbdPct: row.cbd_pct,
-    description: row.description,
+    description: isTiptapDoc(row.description) ? row.description : null,
     lineage: row.lineage,
     flavors: row.flavors ?? [],
     effects: row.effects ?? [],

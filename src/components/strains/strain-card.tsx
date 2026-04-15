@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Strain } from "@/lib/strains/types";
+import { extractTiptapText } from "@/lib/strains/types";
 
 const TYPE_LABEL: Record<Strain["type"], string> = {
   indica: "INDICA",
@@ -51,7 +52,7 @@ export function StrainCard({ strain }: { strain: Strain }) {
         </h3>
         {strain.description ? (
           <p className="text-sm text-[var(--color-ink-muted)] line-clamp-3">
-            {strain.description}
+            {extractTiptapText(strain.description)}
           </p>
         ) : null}
       </div>
