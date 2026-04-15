@@ -4,6 +4,7 @@ import { getStrainRepository } from "@/lib/strains/repository";
 import { StrainCard } from "@/components/strains/strain-card";
 import { StrainImageZoom } from "@/components/strains/strain-image-zoom";
 import type { StrainType } from "@/lib/strains/types";
+import { stripHtml } from "@/lib/utils";
 
 // ISR: refresh the pre-rendered detail pages once an hour. Admin edits
 // already fire `revalidatePath` for immediate propagation (see
@@ -36,9 +37,9 @@ export async function generateMetadata({
   if (!strain) return { title: "Strain not found" };
   return {
     title: strain.name,
-    description:
-      strain.description ??
-      `${strain.name} — ${TYPE_LABEL[strain.type]} cultivar from Rooted Right Farms.`,
+    description: strain.description
+      ? stripHtml(strain.description)
+      : `${strain.name} — ${TYPE_LABEL[strain.type]} cultivar from Rooted Right Farms.`,
   };
 }
 
@@ -106,9 +107,10 @@ export default async function StrainDetailPage({
             </p>
           ) : null}
           {strain.description ? (
-            <p className="text-lg text-[var(--color-ink-muted)] leading-[1.7]">
-              {strain.description}
-            </p>
+            <div
+              className="strain-description text-lg text-[var(--color-ink-muted)] leading-[1.7]"
+              dangerouslySetInnerHTML={{ __html: strain.description }}
+            />
           ) : null}
         </div>
       </section>

@@ -165,6 +165,19 @@ h6 {
   top: 16px;
 }
 
+/* Strain description — renders TipTap HTML output on the public detail page */
+.strain-description p { margin: 0.5rem 0; }
+.strain-description p:first-child { margin-top: 0; }
+.strain-description p:last-child { margin-bottom: 0; }
+.strain-description strong { font-weight: 600; color: var(--color-ink); }
+.strain-description em { font-style: italic; }
+.strain-description h2 { font-family: var(--font-serif); font-size: var(--text-xl); font-weight: 600; margin: 1rem 0 0.4rem; color: var(--color-ink); }
+.strain-description h3 { font-family: var(--font-serif); font-size: var(--text-lg); font-weight: 600; margin: 0.75rem 0 0.3rem; color: var(--color-ink); }
+.strain-description ul { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0; }
+.strain-description ol { list-style: decimal; padding-left: 1.25rem; margin: 0.5rem 0; }
+.strain-description li { margin: 0.2rem 0; }
+.strain-description a { color: var(--color-accent); text-decoration: underline; }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
