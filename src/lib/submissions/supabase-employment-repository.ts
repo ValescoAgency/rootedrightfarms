@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { createSupabaseAnonClient } from "@/lib/supabase/anon";
 import {
   createInMemoryEmploymentRepository,
@@ -18,9 +19,17 @@ export function createSupabaseEmploymentRepository(): EmploymentRepository {
     async insert(input): Promise<EmploymentRowAtRest> {
       const client = createSupabaseAnonClient();
 
-      const { data, error } = await client
+      // Generate id and timestamp app-side so we don't need a SELECT after
+      // insert. The anon role has no SELECT policy on employment_submissions
+      // (by design — submitted data is admin-only), so chaining .select()
+      // would trigger an RLS violation even though the INSERT itself succeeds.
+      const id = randomUUID();
+      const createdAt = new Date().toISOString();
+
+      const { error } = await client
         .from("employment_submissions")
         .insert({
+          id,
           first_name: input.firstName,
           last_name: input.lastName,
           dob: base64ToBytea(input.dobEncrypted),
@@ -36,20 +45,13 @@ export function createSupabaseEmploymentRepository(): EmploymentRepository {
           education: input.education,
           military_service: input.militaryService ?? null,
           arrests_disclosure: base64ToBytea(input.arrestsDisclosureEncrypted),
-        })
-        .select("id, created_at")
-        .single();
+        });
 
       if (error) {
         throw new Error(`employment_submissions insert failed: ${error.message}`);
       }
 
-      // Return the full row: input fields (already encrypted) + DB-assigned id/createdAt.
-      return {
-        ...input,
-        id: (data as { id: string; created_at: string }).id,
-        createdAt: (data as { id: string; created_at: string }).created_at,
-      };
+      return { ...input, id, createdAt };
     },
   };
 }
