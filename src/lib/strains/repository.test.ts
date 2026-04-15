@@ -1,6 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { createInMemoryStrainRepository } from "./repository";
-import type { Strain } from "./types";
+import type { Strain, TiptapDoc } from "./types";
+
+const updatedDescription: TiptapDoc = {
+  type: "doc",
+  content: [{ type: "paragraph", content: [{ type: "text", text: "updated" }] }],
+};
 
 const fixture: Strain[] = [
   base("a", "indica", true),
@@ -90,7 +95,7 @@ describe("in-memory StrainRepository", () => {
         type: "indica",
         thcPct: 22,
         cbdPct: 0,
-        description: "updated",
+        description: updatedDescription,
         lineage: null,
         flavors: [],
         effects: [],
@@ -98,9 +103,9 @@ describe("in-memory StrainRepository", () => {
         isPublished: true,
       });
       expect(saved.name).toBe("A Renamed");
-      expect(saved.description).toBe("updated");
+      expect(saved.description).toEqual(updatedDescription);
       const reread = await r.getStrainBySlug("a");
-      expect(reread?.description).toBe("updated");
+      expect(reread?.description).toEqual(updatedDescription);
     });
 
     it("renames the slug when originalSlug differs from input.slug", async () => {
