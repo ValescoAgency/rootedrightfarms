@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { primaryNav, socialLinks } from "@/lib/nav";
 import { getSiteConfig } from "@/lib/site-config";
@@ -28,9 +29,22 @@ export function Footer() {
 
         <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
           <div className="space-y-3">
-          <p className="font-serif text-2xl font-semibold text-[var(--color-ink)]">
-            Rooted Right Farms
-          </p>
+          <Link
+            href="/"
+            aria-label="Rooted Right Farms — home"
+            className="inline-flex items-center gap-3"
+          >
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
+            <p className="font-serif text-2xl font-semibold text-[var(--color-ink)]">
+              Rooted Right Farms
+            </p>
+          </Link>
           <p className="text-sm text-[var(--color-ink-muted)]">
             Premium indoor hydroponic cannabis — Ardmore, Oklahoma.
           </p>
