@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { confirmAge, denyAge } from "./actions";
 import { sanitizeNextParam } from "@/lib/age-gate";
 
@@ -17,14 +18,24 @@ export default async function AgeCheckPage({
   return (
     <div className="surface-dark min-h-screen flex items-center justify-center px-6 py-16">
       <div className="max-w-xl text-center">
-        <p
-          className="font-serif text-2xl font-semibold mb-16"
-          style={{ letterSpacing: "0.02em" }}
-        >
-          Rooted Right Farms
-        </p>
+        <div className="flex items-center justify-center gap-3 mb-16">
+          <Image
+            src="/images/logo.png"
+            alt=""
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10"
+          />
+          <p
+            className="font-serif text-2xl font-semibold"
+            style={{ letterSpacing: "0.02em" }}
+          >
+            Rooted Right Farms
+          </p>
+        </div>
         <p className="eyebrow mb-4" style={{ color: "var(--color-ink-inv-muted)" }}>
-          FIG. 000 — VERIFY ACCESS
+          VERIFY ACCESS
         </p>
         <h1 className="font-serif text-4xl lg:text-5xl mb-8">Are you 21 or older?</h1>
         <p

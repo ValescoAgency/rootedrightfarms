@@ -34,7 +34,7 @@ export default function OgImage() {
             alignSelf: "flex-start",
           }}
         >
-          FIG. 001 — ARDMORE, OK
+          ARDMORE, OK
         </div>
         <div
           style={{

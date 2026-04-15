@@ -32,7 +32,7 @@ export default function EmploymentPage() {
         </div>
       </section>
       <section className="container-site py-16 lg:py-24">
-        <p className="eyebrow mb-4">FIG. 008 — EMPLOYMENT</p>
+        <p className="eyebrow mb-4">EMPLOYMENT</p>
         <h1 className="font-serif text-4xl lg:text-5xl max-w-2xl mb-6">
           Apply to work with us.
         </h1>
