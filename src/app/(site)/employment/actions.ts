@@ -2,27 +2,31 @@
 
 import { headers } from "next/headers";
 import { submitEmployment } from "@/lib/submissions/submit-employment";
-import { createInMemoryEmploymentRepository } from "@/lib/submissions/employment-repository";
+import { getEmploymentRepository } from "@/lib/submissions/supabase-employment-repository";
+import {
+  createNoopEmploymentEmailer,
+  createResendEmploymentEmailer,
+} from "@/lib/submissions/employment-emailer";
 import { createInMemoryRateLimiter } from "@/lib/submissions/rate-limiter";
 import type { Envelope } from "@/lib/submissions/types";
 import type { EmploymentRowAtRest } from "@/lib/submissions/employment-repository";
 
-const repository = createInMemoryEmploymentRepository();
+const repository = getEmploymentRepository();
 const rateLimiter = createInMemoryRateLimiter({ max: 3, windowSeconds: 60 });
 
-// Notification is intentionally light-touch: only non-sensitive preview
-// fields. Full Resend wiring lands when the Supabase-backed repo comes online.
-const emailer = {
-  async notifyEmployment(preview: {
-    id: string;
-    firstName: string;
-    lastName: string;
-  }) {
-    console.log(
-      `[employment] notify: ${preview.firstName} ${preview.lastName} (${preview.id})`,
-    );
-  },
-};
+function buildEmailer() {
+  const key = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM_EMAIL;
+  const to =
+    process.env.EMPLOYMENT_NOTIFICATION_TO ??
+    process.env.CONTACT_NOTIFICATION_TO;
+  if (key && from && to) {
+    return createResendEmploymentEmailer({ apiKey: key, from, to });
+  }
+  return createNoopEmploymentEmailer();
+}
+
+const emailer = buildEmailer();
 
 function readIp(h: Awaited<ReturnType<typeof headers>>): string {
   return (
