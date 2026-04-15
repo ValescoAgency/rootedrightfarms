@@ -1,7 +1,32 @@
 import { z } from "zod";
 import { STRAIN_TYPES } from "./types";
+import type { TiptapDoc, TiptapNode, TiptapMark } from "./types";
 
 const CHIP_MAX = 12;
+
+// ---------------------------------------------------------------------------
+// TipTap document schema (recursive via z.lazy)
+// ---------------------------------------------------------------------------
+
+const tiptapMarkSchema: z.ZodType<TiptapMark> = z.object({
+  type: z.string(),
+  attrs: z.record(z.unknown()).optional(),
+});
+
+const tiptapNodeSchema: z.ZodType<TiptapNode> = z.lazy(() =>
+  z.object({
+    type: z.string(),
+    text: z.string().optional(),
+    attrs: z.record(z.unknown()).optional(),
+    content: z.array(tiptapNodeSchema).optional(),
+    marks: z.array(tiptapMarkSchema).optional(),
+  }),
+);
+
+const tiptapDocSchema: z.ZodType<TiptapDoc> = z.object({
+  type: z.literal("doc"),
+  content: z.array(tiptapNodeSchema),
+});
 
 function csvToArray(raw: string): string[] {
   return raw
@@ -22,7 +47,7 @@ export const strainAdminSchema = z.object({
   type: z.enum(STRAIN_TYPES),
   thcPct: z.number().min(0).max(100).nullable(),
   cbdPct: z.number().min(0).max(100).nullable(),
-  description: z.string().trim().max(4000).nullable(),
+  description: tiptapDocSchema.nullable(),
   lineage: z.string().trim().max(200).nullable(),
   flavors: z.array(z.string().trim().min(1).max(40)).max(CHIP_MAX),
   effects: z.array(z.string().trim().min(1).max(40)).max(CHIP_MAX),
@@ -56,7 +81,15 @@ export function parseStrainFormData(fd: FormData) {
     type: get("type"),
     thcPct: get("thcPct") ? Number(get("thcPct")) : null,
     cbdPct: get("cbdPct") ? Number(get("cbdPct")) : null,
-    description: get("description") || null,
+    description: (() => {
+      const raw = get("description");
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw) as unknown;
+      } catch {
+        return null;
+      }
+    })(),
     lineage: get("lineage") || null,
     flavors: csvToArray(get("flavors")),
     effects: csvToArray(get("effects")),

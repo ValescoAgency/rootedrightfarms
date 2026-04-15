@@ -1,4 +1,11 @@
-import type { Strain } from "./types";
+import type { Strain, TiptapDoc } from "./types";
+
+function p(text: string): TiptapDoc {
+  return {
+    type: "doc",
+    content: [{ type: "paragraph", content: [{ type: "text", text }] }],
+  };
+}
 
 /**
  * Mirror of the seed migration at supabase/migrations/20260414000002_seed_strains.sql.
@@ -17,8 +24,9 @@ export const seedStrains: Strain[] = [
     type: "hybrid",
     thcPct: 26.4,
     cbdPct: 0.1,
-    description:
+    description: p(
       "A dense, resin-caked flower with a layered aroma of cherry pastry, earth, and spice. Pie Hoe is our flagship — a slow, meditative high paired with a sweet, fruit-forward smoke.",
+    ),
     lineage: "Grape Pie × Tahoe OG",
     flavors: ["cherry", "earth", "spice", "vanilla"],
     effects: ["relaxed", "euphoric", "creative"],
@@ -35,8 +43,9 @@ export const seedStrains: Strain[] = [
     type: "hybrid",
     thcPct: 24.1,
     cbdPct: 0.08,
-    description:
+    description: p(
       "Tropical, sweet, and unmistakably banana on the nose. A crowd favorite for relaxed afternoons.",
+    ),
     lineage: "Banana OG × Candyland",
     flavors: ["banana", "tropical", "sweet"],
     effects: ["relaxed", "happy", "uplifted"],
@@ -53,8 +62,9 @@ export const seedStrains: Strain[] = [
     type: "sativa",
     thcPct: 22.8,
     cbdPct: 0.05,
-    description:
+    description: p(
       "Bright pine and citrus with a clean, energetic ceiling. Good daytime company.",
+    ),
     lineage: "Jack Herer × Sour Pine",
     flavors: ["pine", "citrus", "earth"],
     effects: ["energetic", "focused", "uplifted"],
@@ -71,8 +81,9 @@ export const seedStrains: Strain[] = [
     type: "hybrid",
     thcPct: 25.7,
     cbdPct: 0.07,
-    description:
+    description: p(
       "Orange zest over a warm cookie base. Balanced high that trades off energy for ease over the session.",
+    ),
     lineage: "Tropicana × GSC",
     flavors: ["orange", "citrus", "cookie"],
     effects: ["relaxed", "creative", "happy"],

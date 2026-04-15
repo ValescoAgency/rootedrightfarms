@@ -1,7 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { createSupabaseAnonClient } from "@/lib/supabase/anon";
-import type { Strain, StrainType } from "./types";
+import type { Strain, StrainType, TiptapDoc } from "./types";
 import type { StrainAdminInput } from "./admin-schema";
 import type {
   GetStrainOptions,
@@ -16,7 +16,7 @@ interface StrainRow {
   type: StrainType;
   thc_pct: number | null;
   cbd_pct: number | null;
-  description: string | null;
+  description: unknown;
   lineage: string | null;
   flavors: string[] | null;
   effects: string[] | null;
@@ -35,7 +35,7 @@ function rowToStrain(row: StrainRow): Strain {
     type: row.type,
     thcPct: row.thc_pct,
     cbdPct: row.cbd_pct,
-    description: row.description,
+    description: (row.description as TiptapDoc | null) ?? null,
     lineage: row.lineage,
     flavors: row.flavors ?? [],
     effects: row.effects ?? [],
