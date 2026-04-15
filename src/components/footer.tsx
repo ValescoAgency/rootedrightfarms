@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Instagram } from "lucide-react";
 import { primaryNav, socialLinks } from "@/lib/nav";
 import { getSiteConfig } from "@/lib/site-config";
 import { NewsletterSignup } from "@/components/newsletter-signup";
@@ -99,9 +100,10 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
+                  aria-label={`${s.label} (opens in new tab)`}
+                  className="text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
                 >
-                  {s.label}
+                  <Instagram size={20} aria-hidden />
                 </a>
               </li>
             ))}
