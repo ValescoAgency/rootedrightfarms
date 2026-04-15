@@ -9,6 +9,8 @@ import {
 } from "@/lib/strains/admin-schema";
 import { getStrainRepository } from "@/lib/strains/repository";
 import type { Envelope } from "@/lib/submissions/types";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { uploadImage } from "@/lib/image-upload";
 
 export type StrainSaveResult = Envelope<{ slug: string }>;
 
@@ -81,4 +83,49 @@ export async function deleteStrainAction(formData: FormData) {
   revalidatePath("/strains");
   revalidatePath("/admin/strains");
   redirect("/admin/strains");
+}
+
+/**
+ * Upload a strain image to Supabase Storage. Called directly from the
+ * ImageUpload client component before the main form is submitted.
+ * Returns the public URL on success or an error string on failure.
+ */
+export async function uploadStrainImageAction(
+  formData: FormData,
+): Promise<{ url: string; error: null } | { url: null; error: string }> {
+  await requireRole(["admin"], "/admin/strains");
+
+  const file = formData.get("file");
+  if (!(file instanceof File) || file.size === 0) {
+    return { url: null, error: "No file provided." };
+  }
+
+  const supabase = await createSupabaseServerClient();
+
+  const result = await uploadImage(
+    {
+      size: file.size,
+      mimeType: file.type,
+      name: file.name,
+      arrayBuffer: () => file.arrayBuffer(),
+    },
+    "strain-images",
+    {
+      upload: async ({ path, bytes, contentType }) => {
+        const { data, error } = await supabase.storage
+          .from("strain-images")
+          .upload(path, bytes, { contentType, upsert: true });
+        if (error) throw new Error(error.message);
+        const {
+          data: { publicUrl },
+        } = supabase.storage.from("strain-images").getPublicUrl(data.path);
+        return { publicUrl };
+      },
+    },
+  );
+
+  if (result.error) {
+    return { url: null, error: result.error.message };
+  }
+  return { url: result.url, error: null };
 }
