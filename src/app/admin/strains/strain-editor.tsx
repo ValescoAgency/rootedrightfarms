@@ -31,6 +31,7 @@ export function StrainEditor({ mode, strain }: Props) {
   const [name, setName] = useState(strain?.name ?? "");
   const [slug, setSlug] = useState(strain?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(mode === "edit");
+  const [strainType, setStrainType] = useState(strain?.type ?? "hybrid");
 
   const errors = state?.error?.fields ?? {};
 
@@ -74,7 +75,8 @@ export function StrainEditor({ mode, strain }: Props) {
             <select
               name="type"
               required
-              defaultValue={strain?.type ?? "hybrid"}
+              value={strainType}
+              onChange={(e) => setStrainType(e.target.value as typeof strainType)}
               className={fieldClass}
             >
               {STRAIN_TYPES.map((t) => (
