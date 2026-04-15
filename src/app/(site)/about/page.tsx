@@ -14,20 +14,12 @@ export default function AboutPage() {
     <>
       <section className="relative overflow-hidden" style={{ height: "clamp(320px, 50vh, 480px)" }}>
         <Image
-          src="/images/about/hero-desktop.jpg"
+          src="/images/about/jars.jpeg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover hidden lg:block"
-        />
-        <Image
-          src="/images/about/hero-mobile.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover lg:hidden"
+          className="object-cover"
         />
         <div
           aria-hidden
