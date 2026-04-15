@@ -76,6 +76,14 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             <li>
               <Link
+                href="/employment"
+                className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
+              >
+                Employment
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/privacy"
                 className="text-xs text-[var(--color-ink-subtle)] hover:text-[var(--color-accent)] transition-colors min-h-[44px] inline-flex items-center"
               >
