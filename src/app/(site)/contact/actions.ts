@@ -2,7 +2,7 @@
 
 import { headers } from "next/headers";
 import { submitContact } from "@/lib/submissions/submit";
-import { createInMemorySubmissionsRepository } from "@/lib/submissions/repository";
+import { getContactRepository } from "@/lib/submissions/supabase-contact-repository";
 import {
   createNoopEmailer,
   createResendEmailer,
@@ -11,10 +11,7 @@ import { createInMemoryRateLimiter } from "@/lib/submissions/rate-limiter";
 import type { Envelope } from "@/lib/submissions/types";
 import type { PersistedSubmission } from "@/lib/submissions/repository";
 
-// Module-level singletons so repeated invocations share state in a single
-// preview deploy instance. TODO(prod): replace with Supabase-backed repo
-// and Vercel KV-backed rate limiter before launch.
-const repository = createInMemorySubmissionsRepository();
+const repository = getContactRepository();
 const rateLimiter = createInMemoryRateLimiter({ max: 5, windowSeconds: 60 });
 
 function buildEmailer() {
