@@ -10,14 +10,14 @@ const CHIP_MAX = 12;
 
 const tiptapMarkSchema: z.ZodType<TiptapMark> = z.object({
   type: z.string(),
-  attrs: z.record(z.unknown()).optional(),
+  attrs: z.record(z.string(), z.unknown()).optional(),
 });
 
 const tiptapNodeSchema: z.ZodType<TiptapNode> = z.lazy(() =>
   z.object({
     type: z.string(),
     text: z.string().optional(),
-    attrs: z.record(z.unknown()).optional(),
+    attrs: z.record(z.string(), z.unknown()).optional(),
     content: z.array(tiptapNodeSchema).optional(),
     marks: z.array(tiptapMarkSchema).optional(),
   }),
