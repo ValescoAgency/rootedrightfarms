@@ -32,7 +32,7 @@ export async function InstagramGrid() {
               href="https://www.instagram.com/rootedrightfarms"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+              className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors py-2 inline-flex items-center"
             >
               @rootedrightfarms →
             </a>
