@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { TiptapDoc, TiptapNode, TiptapMark } from "@/lib/strains/types";
 
 interface Props {
@@ -68,8 +69,8 @@ function Inline({ node }: { node: TiptapNode }) {
   return <>{applyMarks(node.text ?? "", node.marks ?? [])}</>;
 }
 
-function applyMarks(text: string, marks: TiptapMark[]): React.ReactNode {
-  return marks.reduce<React.ReactNode>((el, mark) => {
+function applyMarks(text: string, marks: TiptapMark[]): ReactNode {
+  return marks.reduce<ReactNode>((el, mark) => {
     switch (mark.type) {
       case "bold":
         return <strong>{el}</strong>;
