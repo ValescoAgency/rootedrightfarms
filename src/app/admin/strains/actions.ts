@@ -61,6 +61,7 @@ export async function saveStrainAction(
     };
   }
 
+  revalidatePath("/");
   revalidatePath("/strains");
   revalidatePath(`/strains/${parsed.data.slug}`);
   if (originalSlug && originalSlug !== parsed.data.slug) {
@@ -80,6 +81,7 @@ export async function deleteStrainAction(formData: FormData) {
     await repo.deleteStrain(slug);
     revalidatePath(`/strains/${slug}`);
   }
+  revalidatePath("/");
   revalidatePath("/strains");
   revalidatePath("/admin/strains");
   redirect("/admin/strains");
