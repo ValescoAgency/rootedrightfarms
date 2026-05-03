@@ -1,0 +1,19 @@
+# pre-cutover-zone.txt
+#
+# Fill this file at T-48h by pasting the full zone export from GoDaddy,
+# verbatim, without editing. This is the rollback source of truth.
+#
+# Include EVERY record type: A, AAAA, CNAME, MX, TXT, SRV, CAA, NS.
+# Do NOT delete comments, lines, or records that look unrelated — if they
+# were in the zone before cutover, they belong here.
+#
+# Format suggestion (BIND-style for easy diffing):
+#
+#   rootedrightfarms.com.          3600  IN  A     <legacy-ip>
+#   www.rootedrightfarms.com.      3600  IN  CNAME <legacy-host>
+#   rootedrightfarms.com.          3600  IN  MX    1 <mail-provider>
+#   rootedrightfarms.com.          3600  IN  TXT   "v=spf1 …"
+#   _dmarc.rootedrightfarms.com.   3600  IN  TXT   "v=DMARC1; p=…"
+#
+# Once filled in, commit this file as part of the VA-46 PR so the
+# rollback state is versioned alongside the runbook.
